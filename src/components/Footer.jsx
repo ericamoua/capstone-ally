@@ -1,7 +1,7 @@
 // change the navbar to have the social icons in it, and remove the icons from the footer
 import React from 'react';
 import {Link} from 'react-router-dom'
-import footerCSS from '../CSS/Footer.module.css'
+import footerCSS from '../styles/Footer.module.css'
 import facebookIcon from '../assets/facebook.png';
 import instagramIcon from '../assets/instagram.png';
 import xIcon from '../assets/twitter.jpeg';
