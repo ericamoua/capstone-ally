@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import Morgage from '../src/components/Morgage.jsx';
-import './styles/morgage.module.css';
+import MortgageCalculator from './components/MortgageCalculator';
 
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
 
   return (
     <>
-      <Morgage />
+      <MortgageCalculator />
     </>
   )
 }
