@@ -26,7 +26,7 @@ const MortgageCalculator = () => {
     const response = await fetch(`https://api.api-ninjas.com/v1/mortgagecalculator?home_value=${home_value}&downpayment=${downpayment}&interest_rate=${interest}&duration_years=${duration_years}&monthly_hoa=${monthly_hoa}&annual_property_tax=${annual_property_tax}`, {
       method: 'GET',
       headers: {
-        'X-Api-Key': 'lYy1IUr1EwxyMu4uViHkVw==I9EYT37KJlN9XY8V',
+        'X-Api-Key': import.meta.env.VITE_Mortgage_Calculator_API_KEY,
         'Content-Type': 'application/json'
       }
     })
