@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Nav from './components/Nav'
 import Footer from './components/Footer'
-// import Home from "./Components/Home"
+import Home from "./pages/Home"
 // import Login from './Components/Login'
 // import Register from './Components/Register'
 function App() {
@@ -12,11 +12,11 @@ function App() {
   <div className='App'>
     <Nav/>
     <Routes>
-      {/* <Route path="/" element={<Home/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/register" element={<Register/>}/> */}
+      <Route path="/" element={<Home/>}/>
+      {/* // <Route path="/login" element={<Login/>}/>
+      // <Route path="/register" element={<Register/>}/> */}
     </Routes>
-    <Footer/>
+    {/* <Footer/> */}
   </div>
 </Router>
   )
