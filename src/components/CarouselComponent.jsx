@@ -2,7 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import style from '../styles/carousel.module.css';
-import House1 from '../assets/home-img.jpeg';
+import House1 from '../assets/house-1.jpg';
 import House2 from '../assets/house-2.jpg';
 import House3 from '../assets/house-3.jpg';
 
