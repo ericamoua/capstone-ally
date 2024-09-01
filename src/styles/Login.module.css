@@ -1,0 +1,120 @@
+
+
+
+
+.logoImages{
+    width: 25%;
+}
+
+.formContainer{
+ text-align: center;
+ display: flex;
+ border:1px solid black;
+ width:100%;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ 
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #4F5B66;
+    height: 90vh;
+    margin: 4rem;
+    border-radius: 0.2rem;
+    background-color: rgba(255, 255, 255, 0.489);
+}
+
+
+.form input{
+    width:55%;
+    height:3rem;
+    margin: 2rem;
+    padding: .7rem;
+    border-radius: .2rem;
+    border-color:black;
+}
+
+textarea input{
+       width:55%;
+    height:3rem;
+    margin: 2rem;
+    padding: .7rem;
+    border-radius: .2rem;
+    border-color:black;
+}
+
+
+
+
+
+
+textarea{
+    width:55%;
+    height:6rem;
+}
+
+
+.buttonContainer{
+margin:1rem;
+
+}
+
+
+
+
+
+
+
+input {
+    outline: none;
+}
+
+
+
+
+.googleBtn{
+    border-radius: 50px;
+    width: 60%;
+    background-color: white;
+    text-align: center;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+}
+
+
+
+.submitBtn{
+    border-radius: 50px;
+    width: 60%;
+    border: 1px solid #dadce0 ;
+    background-color: #0B5394;
+    padding: .7rem;
+    color:white;
+}
+
+
+
+
+
+.googleBtn:hover{
+    background-color:#dadce0;
+    transition: 800ms;
+}
+
+.googleBtnContainer{
+    display: flex;
+}
+
+
+.formBody{
+    background-image: url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyaminmellish-106399.jpg&fm=jpg');
+    background-size: cover;
+        background-position: center;
+}

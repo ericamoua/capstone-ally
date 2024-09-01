@@ -1,6 +1,4 @@
-// 
 import React, { useState } from "react";
-import '../styles/mortgage.module.css'
 
 const MortgageCalculator = () => {
   // these go into api
@@ -15,6 +13,7 @@ const MortgageCalculator = () => {
   const [monthly_payment, setMonthly_payment] = useState('');
   const [annual_payment, setAnnual_payment] = useState('');
   const [total_interest_paid, setTotal_interest_paid] = useState('');
+  const [loanAmount, setLoanAmount] = useState('');
 
   // loading state
   const [isLoading, setIsLoading] = useState(false);
@@ -50,6 +49,7 @@ const MortgageCalculator = () => {
     setMonthly_payment(monthly_payment.total);
     setAnnual_payment(annual_payment.total);
     setTotal_interest_paid(total_interest_paid);
+    setLoanAmount((home_value - downpayment));
 
     setIsLoading(true);
     setIsCalculated(true);
@@ -64,7 +64,7 @@ const MortgageCalculator = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-6 mx-auto calculate-form">
-          <div className="card card-body text-center mt-5">
+          <div className="card card-body text-center">
             <h1 className="heading display-5 pb-3">Mortgage Calculator</h1>
             <form id="loan-form" onSubmit={handleCalculate}>
               <div className="form-group">
@@ -154,7 +154,7 @@ const MortgageCalculator = () => {
               </div>
               <div className="form-group">
                 <button
-                  className="btn btn-dark btn-block"
+                  className="btn btn-dark btn-block m-lg-3"
                   type="button"
                   onClick={handleCalculate}
                 >
@@ -168,6 +168,7 @@ const MortgageCalculator = () => {
                 {isLoading ? (
                   <div id="loading">
                     <img
+                      style={{ width: '100%' }}
                       src="https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif"
                       alt="Loading"
                     />
@@ -184,7 +185,7 @@ const MortgageCalculator = () => {
                           type="text"
                           className="form-control"
                           id="monthly-payment"
-                          value={monthly_payment.toLocaleString()}
+                          value={'$' + monthly_payment.toLocaleString()}
                           disabled
                         />
                       </div>
@@ -198,7 +199,7 @@ const MortgageCalculator = () => {
                           type="text"
                           className="form-control"
                           id="total-payment"
-                          value={annual_payment.toLocaleString()}
+                          value={'$' + annual_payment.toLocaleString()}
                           disabled
                         />
                       </div>
@@ -212,7 +213,21 @@ const MortgageCalculator = () => {
                           type="text"
                           className="form-control"
                           id="total-interest"
-                          value={total_interest_paid.toLocaleString()}
+                          value={'$' + total_interest_paid.toLocaleString()}
+                          disabled
+                        />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text">Loan Amount</span>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="total-interest"
+                          value={'$' + loanAmount.toLocaleString()}
                           disabled
                         />
                       </div>
