@@ -1,0 +1,27 @@
+.splitHomeMortgage {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    padding: 3%;
+}
+
+.splitText {
+    display: flex;
+    justify-content: space-between;
+    margin: 1%;
+}
+
+.charlotteText {
+    font-size: 20px;
+    margin-top: 20px;
+    width: 50%;
+    padding: 0 10px;
+}
+
+.charlotteTextList {
+    font-size: 20px;
+    margin-top: 20px;
+    width: 50%;
+    padding: 0 10px;
+}
