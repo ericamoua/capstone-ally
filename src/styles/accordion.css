@@ -38,11 +38,11 @@
         }
     }
     [aria-expanded="true"]{
-        background: #24b365;
-        color: #000;
+        background: #0B5394;
+        color: #fff;;
         i {
-            color: #000;
-            background: #24b365;
+            color: #fff;;
+            background: #0B5394;
           &:before{
                 content: "\f068" ;
             }

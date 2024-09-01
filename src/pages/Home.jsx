@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import MortgageCalculator from "../components/MortgageCalculator";
-import '../styles/mortgage.module.css'
 import HomeHero from "../components/HomeHero";
-import '../styles/home.css'
-import CharlotteHome from "../components/CharlotteHome";
+import style from '../styles/home.module.css'
+// import CharlotteHome from "../components/CharlotteHome";
 import AccordionSteps from "../components/AccordionSteps";
 import CarouselComponent from "../components/CarouselComponent";
-import HomeSteps from "../components/StepsImg";
-
 
 
 
@@ -63,21 +60,36 @@ const Home = () => {
     return (
         <div>
             <HomeHero />
+            {/* <CharlotteHome /> */}
+            <div className={ style.splitText }>
+                <div className={ style.charlotteText }>
+                    <h2>Welcome to Charlotte</h2>
+                    <p>
+                        Charlotte is famous for its great food, friendly vibe, golf courses, and sports scene. As the financial hub of the South, it has over 3,000 manufacturing companies. Residents enjoy top amenities, outdoor activities, and easy travel across the U.S., making it the 6th best place to live according to U.S. News.
+                    </p>
+                    <p>
+                        Budget Nest offers affordable, well-located communities in Charlotte with upgraded homes and a structural warranty. Find your dream home today!
+                    </p>
+                </div>
+                <div className={ style.charlotteTextList }>
+                <h2>Amenities Around Every Corner</h2>
+                <ul>
+                    <li>Top-Ranked Place to Live: Named the #2 'Best Place to Live in North Carolina in 2021-2022' by U.S. News.</li>
+                    <li>2nd-Largest Financial Hub: Charlotte is the second-largest financial center in the United States, after New York City.</li>
+                    <li>Business Opportunities: Ranked #3 among 'The Top 25 Cities for Starting a Business in 2022' by Policygenius.</li>
+                    <li>Outdoor Recreation: Enjoy Lake Norman for boating and fishing, or visit the U.S. National Whitewater Center for rafting and zip-lining.</li>
+                    <li>NASCAR Hall of Fame: Located downtown, celebrating the rich history of NASCAR.</li>
+                    <li>Diverse Attractions: From the interactive Discovery Place Science museum to the exciting Charlotte Motor Speedway.</li>
+                </ul>
+                </div>
+            </div>
 
-            <div>
-                <HomeSteps />
+            <div className={ style.splitHomeMortgage }>
                 <AccordionSteps data={data} />
                 <MortgageCalculator />
             </div>
 
-            <div className="split-charlotte-home">
-                <CharlotteHome />
-            </div>
-
-            <div>
-                <CarouselComponent /> 
-            </div>
-            
+            <CarouselComponent /> 
         </div>
     )
 }

@@ -1,0 +1,54 @@
+.slideImageSize {
+  /* height: 350px;
+  width: 350px; */
+  object-fit: fill;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3%;
+}
+
+/* From Uiverse.io by d4niz */ 
+.contactButton {
+  background: #0B5394;
+  color: white;
+  font-family: inherit;
+  padding: 0.45em;
+  padding-left: 1em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3em;
+}
+
+.iconButton {
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.contactButton:hover {
+  transform: translate(-0.05em, -0.05em);
+}
+
+.contactButton:active {
+  transform: translate(0.05em, 0.05em);
+}
