@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
+/*import styles */
 
-// Assuming Nav and Footer components are imported or defined somewhere in your project
-import Nav from './Nav';
-import Footer from './Footer';
 
 const Resource = () => {
   // State management for form inputs and errors
@@ -71,7 +69,7 @@ const Resource = () => {
 
   return (
     <>
-      <Nav />
+
       <div className="contact-container">
         <div className="contact-image">
           <h1 className="contact-text">Contact Us Today!</h1>
@@ -150,16 +148,35 @@ const Resource = () => {
       </div>
 
       <main>
-        <section className="hero">
-          <h1>Your Complete Guide To Affordable Home <Buying></Buying></h1>
-          <p>Buying a home that fits your budget can be stressful, but we're here to help. Learn how to buy home with articles and tips from our experts.</p>
-        </section>
+  <section className="hero">
+    <h1>Your Complete Guide To Affordable Home Buying.</h1>
+    <p>Buying a home that fits your budget can be stressful, but we're here to help. Learn how to buy a home with articles and tips from our experts.</p>
+  </section>
 
+  <section className="card-section">
+    <div className="card">
+      <a href="/page1">
+        <h2>How to Buy a Home in 7 Steps</h2>
+        <p>Get tips on how to find and buy your dream home!</p>
+      </a>
+    </div>
+    <div className="card">
+      <a href="/page2">
+        <h2>Buying a Home as a Non-U.S. Citizen</h2>
+        <p>Learn about mortgage options and find the best rates.</p>
+      </a>
+    </div>
+    <div className="card">
+      <a href="/page3">
+        <h2>How to Choose a Real Estate Agent</h2>
+        <p>Find a trusted real estate agent in your area.</p>
+      </a>
+    </div>
+  </section>
 
-        <section className="hero2"></section>
-      </main>
-
-      <Footer />
+  <section className="hero2"></section>
+</main>
+    
     </>
   );
 };
