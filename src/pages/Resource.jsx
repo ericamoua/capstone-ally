@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
-/*import styles */
-
+import "/src/styles/Resource.css";
 
 const Resource = () => {
   // State management for form inputs and errors
