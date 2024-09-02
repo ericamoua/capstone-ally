@@ -5,6 +5,7 @@ import style from '../styles/home.module.css'
 // import CharlotteHome from "../components/CharlotteHome";
 import AccordionSteps from "../components/AccordionSteps";
 import CarouselComponent from "../components/CarouselComponent";
+import Art from '../assets/charlotte-art.jpg';
 
 
 
@@ -63,6 +64,7 @@ const Home = () => {
             {/* <CharlotteHome /> */}
             <div className={ style.splitText }>
                 <div className={ style.charlotteText }>
+                    <img src={Art} alt="charlotte art" />
                     <h2>Welcome to Charlotte</h2>
                     <p>
                         Charlotte is famous for its great food, friendly vibe, golf courses, and sports scene. As the financial hub of the South, it has over 3,000 manufacturing companies. Residents enjoy top amenities, outdoor activities, and easy travel across the U.S., making it the 6th best place to live according to U.S. News.
