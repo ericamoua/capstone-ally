@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import registerCss from '../CSS/Register.module.css';
+import registerCss from '../styles/Register.module.css';
 
 function Register() {
   const [username, setUsername] = useState('');  
