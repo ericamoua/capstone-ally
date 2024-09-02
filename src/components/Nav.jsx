@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { SocialIcon } from 'react-social-icons';
 import { Link } from 'react-router-dom';
-import navCSS from '../CSS/Nav.module.css';
+import navCSS from '../styles/Nav.module.css';
 
 function BootNavbar() {
   return (

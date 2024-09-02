@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logInCss from '../CSS/Login.module.css';
+import logInCss from '../styles/Login.module.css';
 import { SocialIcon } from 'react-social-icons';
 
 function Login() {
