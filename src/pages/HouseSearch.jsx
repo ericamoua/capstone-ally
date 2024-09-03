@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ListingSearch from '../components/ListingSearch';
-import HouseList from '../components/HouseList';
+
 
 const HouseSearch = () => {
   const [results, setResults] = useState([]);
