@@ -2,10 +2,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import footerCSS from '../styles/Footer.module.css'
-import facebookIcon from '../assets/facebook.png';
-import instagramIcon from '../assets/instagram.png';
-import xIcon from '../assets/twitter.jpeg';
 import { SocialIcon } from 'react-social-icons'
+
+
+
 
 
 
@@ -15,7 +15,7 @@ function Footer() {
   return (
     <footer>
       <div className={footerCSS.footerLogoContainer}>
-      <Link to='/'>LOGO</Link>
+      <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>LOGO</Link>
       </div>
       <div className={footerCSS.footerContent}>
         <div className={footerCSS.newsletterContainer}>
@@ -30,22 +30,22 @@ function Footer() {
         <div className={footerCSS.footerLinks}>
           <div className={footerCSS.footerContainer}>
          <h3>Policies</h3>
-          <Link to='/'>Privacy Policy</Link>
-          <Link to='/'>Terms and Conditions</Link>
+          <Link  style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Privacy Policy</Link>
+          <Link  style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Terms and Conditions</Link>
           </div>
 
           <div className={footerCSS.footerContainer}>
             <h3>Site Links</h3>
-            <Link to='/'>Home</Link>
-           <Link to="/Products"> Welcome Home Blog </Link>
-           <Link to='/'>Careers</Link>
+            <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Home</Link>
+           <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/Products"> Welcome Home Blog </Link>
+           <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Careers</Link>
           </div>
 
           <div className={footerCSS.footerContainer}>
             <h3>First time home buyers</h3>
-            <Link to='/'>Brokers</Link>
-            <Link to='/'>Lenders</Link>
-            <Link to='/'>Lease to buy</Link>
+            <Link  style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Brokers</Link>
+            <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Lenders</Link>
+            <Link  style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Lease to buy</Link>
           </div>
         </div>
       </div>
