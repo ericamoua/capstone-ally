@@ -4,17 +4,16 @@ import Footer from './components/Footer'
 import Home from "./pages/Home"
 import Login from './components/Login'
 import Register from './components/Register'
+
 function App() {
-
-
   return (
     <Router>
   <div className='App'>
     <Nav/>
     <Routes>
       <Route path="/" element={<Home/>}/>
-      // <Route path="/login" element={<Login/>}/>
-      // <Route path="/register" element={<Register/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/register" element={<Register/>}/>
     </Routes>
     <Footer/>
   </div>

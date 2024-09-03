@@ -8,9 +8,9 @@ import Video from '../assets/hero-vid.mp4';
 const HomeHero = () => {
     return (
         <div className={styles.hero}>
-          <Banner />
+          <Banner learnMoreLink="/houseSearch" />
           <video muted autoPlay loop>
-          <source src={Video} type="video/mp4" />
+          <source src={Video} className={styles.heroVideo}type="video/mp4" />
         </video>
         </div>
       );

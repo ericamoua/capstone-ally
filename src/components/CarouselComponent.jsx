@@ -2,6 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import style from '../styles/carousel.module.css';
+import HouseLogo from '../assets/house-home-img-2.png';
 import House1 from '../assets/house-1.jpg';
 import House2 from '../assets/house-2.jpg';
 import House3 from '../assets/house-3.jpg';
@@ -10,9 +11,8 @@ import House3 from '../assets/house-3.jpg';
 const CarouselComponent = () => {
   return (
     <div className={ style.split}>
-      <div className="container text-center w-50">
+      <div className={style.slideImageSize}>
         <div id="carouselExample" className="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="3000">
-        <h2>Making Homeownership a Reality</h2>
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" className="active" aria-current="true"></button>
             <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
@@ -20,13 +20,13 @@ const CarouselComponent = () => {
           </div>
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img className={[style.slideImageSize, "d-block w-100"].join(" ")}src={House1} alt="First slide" />
+              <img className="d-block w-100" src={House1} alt="First slide" />
             </div>
             <div className="carousel-item">
-              <img className={[style.slideImageSize, "d-block w-100"].join(" ")} src={House2} alt="Second slide" />
+              <img className="d-block w-100" src={House2} alt="Second slide" />
             </div>
             <div className="carousel-item">
-              <img className={[style.slideImageSize, "d-block w-100"].join(" ")} src={House3} alt="Third slide" />
+              <img className="d-block w-100" src={House3} alt="Third slide" />
             </div>
           </div>
           <button className="carousel-control-prev" data-bs-target="#carouselExample" type="button" data-bs-slide="prev">
@@ -39,10 +39,8 @@ const CarouselComponent = () => {
           </button>
         </div>
       </div>
-      <div>
-        <h2>
-          Get in touch
-        </h2>
+      <div className={style.reachOutBtn}>
+        <img src={HouseLogo} alt="House" />
         <button className={style.contactButton}>
           HERE
           <div className={style.iconButton}>

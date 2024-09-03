@@ -1,0 +1,25 @@
+.banner {
+    font-size: 50px;
+    font-weight: bold;
+    z-index: 0;
+    text-align: center;
+    color: black
+}
+
+.learnMore {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+    border: black 4px solid;
+    border-radius: 8%;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        font-size: 30px;
+    }
+    .learnMore {
+        font-size: 20px;
+    }
+}
