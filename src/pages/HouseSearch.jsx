@@ -12,7 +12,7 @@ const HouseSearch = () => {
   return (
     <div>
       <ListingSearch onSubmit={handleSearchResults} />
-      <HouseList results={results} />
+
     </div>
   );
 };
