@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const MapComponent = ({ listings }) => {
+  const mapRef = useRef(null);
+
   const defaultCenter = {
     lat: 35.2271, // Latitude for Charlotte, NC
     lng: -80.8431, // Longitude for Charlotte, NC
@@ -12,11 +14,28 @@ const MapComponent = ({ listings }) => {
     height: "500px",
   };
 
+  useEffect(() => {
+    if (mapRef.current && listings.length > 0) {
+      const bounds = new window.google.maps.LatLngBounds();
+      
+      listings.forEach((listing) => {
+        if (listing.location && listing.location.address && listing.location.address.coordinate) {
+          bounds.extend({
+            lat: listing.location.address.coordinate.lat,
+            lng: listing.location.address.coordinate.lon,
+          });
+        }
+      });
+
+      mapRef.current.fitBounds(bounds);
+    }
+  }, [listings]);
+
   return (
     <div style={{ display: "flex" }}>
       <div style={{ flex: 1 }}>
         <LoadScript
-          googleMapsApiKey="AIzaSyDocg7eD7DhV3esYcDafQDwxFKezAQ8uyA"
+          googleMapsApiKey="AIzaSyAiSWL9qbLGSkPi-r_o81IG-CrLzvRA77k"
           libraries={["places"]}
           loadingElement={<div>Loading...</div>}
           id="google-map-script"
@@ -27,9 +46,10 @@ const MapComponent = ({ listings }) => {
             mapContainerStyle={mapContainerStyle}
             zoom={10}
             center={defaultCenter}
+            onLoad={(map) => (mapRef.current = map)}
           >
-            {/* Iterate over listings and place a Marker for each */}
-            {listings.map((listing) => (
+            {/* Iterate over listings and place a numbered Marker for each */}
+            {listings.map((listing, index) => (
               listing.location &&
               listing.location.address &&
               listing.location.address.coordinate && (
@@ -38,6 +58,12 @@ const MapComponent = ({ listings }) => {
                   position={{
                     lat: listing.location.address.coordinate.lat,
                     lng: listing.location.address.coordinate.lon,
+                  }}
+                  label={{
+                    text: `${index + 1}`, // Label showing the index+1 to start numbering from 1
+                    color: "white",
+                    fontSize: "16px",
+                    fontWeight: "bold",
                   }}
                 />
               )
