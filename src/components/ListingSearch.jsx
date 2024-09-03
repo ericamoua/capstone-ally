@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import '../styles/listingsearch.module.css';
+import '../styles/listingsearch.css';
 import MapComponent from './MapComponent';
 
 const ListingSearch = () => {
