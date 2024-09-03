@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './ListingSearch.css';
-import MapComponent from '../src/MapComponent';
+import MapComponent from './MapComponent';
 
 const ListingSearch = () => {
   const [zipcode, setZipcode] = useState('28202');
