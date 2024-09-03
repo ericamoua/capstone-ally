@@ -226,8 +226,22 @@ const MortgageCalculator = () => {
                         <input
                           type="text"
                           className="form-control"
-                          id="total-interest"
+                          id="loan-amount"
                           value={'$' + loanAmount.toLocaleString()}
+                          disabled
+                        />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text">Money Spent</span>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="amountSpent"
+                          value={'$' + (loanAmount + total_interest_paid).toLocaleString()}
                           disabled
                         />
                       </div>
