@@ -1,3 +1,6 @@
+.art{
+    max-width: 100%;
+}
 .splitHomeMortgage {
     display: flex;
     justify-content: space-between;
@@ -9,33 +12,20 @@
 .splitText {
     display: flex;
     justify-content: space-between;
-    margin: 1%;
+    margin: 2%;
+    align-items: baseline;
 }
 
 .charlotteText {
     font-size: 20px;
-    margin-top: 20px;
     width: 50%;
     padding: 0 10px;
 }
 
 .charlotteTextList {
     font-size: 20px;
-    margin-top: 20px;
     width: 50%;
     padding: 0 10px;
-}
-
-.banner {
-    font-size: 50px;
-    font-weight: bold;
-    z-index: 0;
-}
-
-.banner a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 30px;
 }
 
 .charlotteText {
@@ -44,4 +34,23 @@
 
 .charlotteTextList {
     font-family: quicksand;
+}
+
+@media (max-width: 768px) {
+    .splitText {
+        flex-direction: column;
+        gap: 15px;
+        margin: 6%
+    }
+    .charlotteText {
+        width: 100%;
+    }
+    .charlotteTextList {
+        width: 100%;
+    }
+
+    .splitHomeMortgage {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
 }

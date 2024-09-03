@@ -12,8 +12,6 @@ import Page3 from './pages/Page3'
 
 
 function App() {
-
-
   return (
     <Router>
   <div className='App'>
