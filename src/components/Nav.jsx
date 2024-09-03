@@ -3,19 +3,22 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { SocialIcon } from 'react-social-icons';
 import { Link } from 'react-router-dom';
 import navCSS from '../styles/Nav.module.css';
-
+import Logo from '../assets/budget-logo.png';
 function BootNavbar() {
   return (
     <header>
       <Navbar expand="lg" className={navCSS.bootNav}>
         <Container fluid>
-          <Navbar.Brand >LOGO</Navbar.Brand>
+          <Navbar.Brand ><img src={Logo} style={{ 
+  display: 'inline-block', 
+  width: '30%', 
+  height: '35%', 
+}}></img></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -26,21 +29,9 @@ function BootNavbar() {
               <Nav.Link as={Link} to="/search" style={{ color: 'black' }}>
                 Find your home
               </Nav.Link>
-              <Nav.Link as={Link} to="/contact" style={{ color: 'black' }}>
+              <Nav.Link as={Link} to="/resource" style={{ color: 'black' }}>
                 Contact us
               </Nav.Link>
-              <NavDropdown title="Why Budget Nest" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">
-                  Lower interest rate
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Upgrades included
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#Ameneties">
-                  Move in ready
-                </NavDropdown.Item>
-              </NavDropdown>
               <Form className="d-flex" style={{ margin: ".5rem" }}>
                 <Link to="/login">
                   <Button variant="primary" size="sm">
