@@ -63,7 +63,6 @@ const MapComponent = ({ listings }) => {
                     text: `${index + 1}`, // Label showing the index+1 to start numbering from 1
                     color: "white",
                     fontSize: "16px",
-                    fontWeight: "bold",
                   }}
                 />
               )
