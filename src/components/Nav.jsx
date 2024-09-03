@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { SocialIcon } from 'react-social-icons';
 import { Link } from 'react-router-dom';
-import navCSS from '../styles/Nav.module.css';
+import navCSS from '../styles/nav.module.css';
 import Logo from '../assets/budget-logo.png';
 function BootNavbar() {
   return (
