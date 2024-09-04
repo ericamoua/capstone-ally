@@ -1,57 +1,47 @@
 import React from 'react';
-import '../styles/Page1.css';
+import styles from '../styles/Page1.module.css';
 import heroImage from '../assets/brooke-cagle-WHWYBmtn3_0-unsplash.jpg';
 
 const Page1 = () => {
   const heroSectionStyle = {
     backgroundImage: `url(${heroImage})`,
     height: '400px', 
-    paddingBottom: '50px' 
+    paddingBottom: '50px',
   };
 
   return (
-    <div className="page-container">
-      <section className="hero-section" style={heroSectionStyle}>
-        <div className="hero-content">
-          <h1>How to Buy a Home in 7 Steps</h1>
-          <p>Get tips on how to find and buy your dream home!</p>
+    <div className={styles.pageContainer}>
+      <section className={styles.heroSection} style={heroSectionStyle}>
+        <div className={styles.heroContent}>
+          <h1>Definition of "Under Contract"</h1>
+          <p>Understanding the meaning and implications of a property being under contract.</p>
         </div>
       </section>
 
-      <div className="steps-content">
-        <p className="step">
-          <strong>Check Your Credit Report</strong><br />
-          Begin your homebuying process by reviewing your credit report. Your credit score is a key factor in determining the types of loans you qualify for and the interest rates you’ll receive. Generally, a credit score of 620 is the minimum required for a conventional loan, but higher scores can help you secure better rates. If your credit score is lower than expected, take steps to improve it before starting your home search.
+      <div className={styles.definitionContent}>
+        <p className={styles.definitionSection}>
+          <strong>What does it mean when a house is ‘active under contract’?</strong>
+          When a home is labeled as "active under contract," it indicates that the seller has accepted an offer from a buyer, but the sale has not yet been finalized. Once all the required steps are completed, the status will change to show that the home has been sold.
         </p>
 
-        <p className="step">
-          <strong>Determine Your Budget</strong><br />
-          After checking your credit report, determine how much you can afford. Use an online mortgage calculator to estimate your monthly payment, including principal, interest, taxes, insurance, and other potential costs. Factor in closing costs, typically 2%-5% of the purchase price. Once you have a budget in mind, start saving for a down payment, which is usually 20% of the home’s price, though some loans may require less.
+        <p className={styles.definitionSection}>
+          <strong>Under contract vs. pending - what’s the difference?</strong>
+          When a property is listed as pending, it means that all contingencies have been removed, all requirements have been met, and the home is on the brink of closing. Essentially, a pending property is much closer to being sold than one that is under contract.
         </p>
 
-        <p className="step">
-          <strong>Get Pre-Approved for a Mortgage</strong><br />
-          Next, get pre-approved for a mortgage to find out how much you can borrow and to streamline the process when you’re ready to make an offer. Shop around with multiple lenders to find the best rates and terms for your situation.
+        <p className={styles.definitionSection}>
+          <strong>Is a house under contract off the market?</strong>
+          If you find your ideal property listed as under contract, it doesn’t necessarily mean all hope is lost. There’s still a possibility that the sale could fall through if either the buyer or seller fails to meet the required conditions.
         </p>
 
-        <p className="step">
-          <strong>Find a Real Estate Agent</strong><br />
-          Choose a real estate agent who can guide you through the homebuying process and help you find the right home. Research agents and ask questions to ensure they are a good fit for your needs.
+        <p className={styles.definitionSection}>
+          <strong>Can a seller accept another offer while under contract?</strong>
+          During the contract period, the seller may be open to accepting backup offers. A backup offer with particularly favorable terms, such as a higher price or fewer contingencies, could be appealing. Since many things can go wrong during the contract period, a significant number of homes may return to the market. Submitting a backup offer puts you in a strong position to become the next buyer if the current deal falls through.
         </p>
 
-        <p className="step">
-          <strong>Search for Homes</strong><br />
-          Start searching for homes that fit your budget and preferences. Use your wish list to narrow down options by price range, home style, location, and desired features. Attend open houses or schedule tours to get a better sense of what you like.
-        </p>
-
-        <p className="step">
-          <strong>Make an Offer and Negotiate</strong><br />
-          Once you find a home you love, work with your real estate agent to make an offer. Be prepared to negotiate with the seller on the price, contingencies, and other terms. Your agent will help you craft a competitive offer based on market conditions and comparable homes.
-        </p>
-
-        <p className="step">
-          <strong>Inspect the Home and Close the Deal</strong><br />
-          Before finalizing the purchase, hire a professional inspector to evaluate the home’s condition, including major systems like plumbing and electrical. If any issues arise, you can negotiate repairs or a lower price. Once everything is in order, proceed to closing, where you’ll sign the necessary documents, transfer funds, and receive the keys to your new home.
+        <p className={styles.definitionSection}>
+          <strong>What is a backup offer?</strong>
+          A backup offer is an offer made by another buyer after the seller has already accepted an initial offer. Sellers may entertain backup offers if they believe the current deal could fall through. If you’re interested in a home that’s under contract, it’s wise to contact a Redfin real estate agent immediately to explore your options for submitting an offer.
         </p>
       </div>
     </div>
