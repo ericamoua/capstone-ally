@@ -1,6 +1,7 @@
 .bootNav{
     background-color: #0B5394;
     padding:1rem;
+    height: 90px;
     color: white;
 }
 
@@ -11,5 +12,17 @@
     display: flex;
 }
 
+  .SocialIcons {
+    display: flex;
+    align-items: center;
+  }
+  
 
-
+  .SocialIcons a {
+    color: white;
+  }
+  
+  .SocialIcons a:hover {
+    opacity: 0.8;
+  }
+  

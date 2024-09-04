@@ -13,7 +13,7 @@
       margin: 0 auto;
   }
   
-  form .search-form {
+ .search-form {
       width: 85%;
       height: 30%;
       display: flex;
@@ -25,13 +25,13 @@
   
   }
   
-  .form-group {
+  .form-cont {
     height: 40px;
     width: 100%;
     margin: 10px;
   }
   
-  .search-form input[type="text"], input[type="number"] {
+  .search-form input[type="text"], .search-form input[type="number"] {
       display: inline-block;
       min-height: 40px;
       width: 80%;
@@ -44,7 +44,7 @@
       transition: all 0.3s ease;
   }
   
-  form select {
+  .search-form select {
       min-height: 40px;
       width: 83.5%;
       font-size: 14px;
@@ -68,14 +68,13 @@
   
   .search-btn {
       background-color: #0B5394;
-      width: 25%;
-      padding: 0.5rem; 
-      height: 2rem; 
+      width: 35%;
       border: none;
       color: #fff;
       border-radius: 5px;
-      font-size: 0.8rem;
-      transition: 0.3s;
+      font-size: 1rem;
+      text-align: center;
+
   }
   
     .search-btn:hover {   
@@ -101,9 +100,46 @@
     margin: 5% auto;
   }
   
-  .listing-image {
+  .listingNumber {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.2rem;
+    color: #0B5394;
+    margin: 3% auto;
+    border: 2px solid #0B5394;
+    padding: 15px;
+    border-radius: 50%;
+
+  }
+
+  .listingImage {
     height: 200px;
     width: 100%;
+  }
+
+  .listing-price {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.5rem;
+    color: #0B5394;
+    margin: 3% auto;
+  }
+
+  .listing-address {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.2rem;
+    color: #4F5B66;
+    margin: 3% auto;
+  }
+
+  .more-details {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1rem;
+    color: #0B5394;
+    margin: 3% auto;
+  }
+
+  .more-details:hover {
+    color: #7b8c9b;
+    cursor: pointer;
   }
   
   .listing-item {

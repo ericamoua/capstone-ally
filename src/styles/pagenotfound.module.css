@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+
+
+.not-found-img {
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    height: 30vh;    
+    object-fit: cover;
+    margin: 5% auto;
+}
+
+.not-found-title {
+    font-family: 'Anton SC', sans-serif;
+    text-align: center;
+    color: #4F5B66;
+    margin: 0 auto;
+    font-size: 2.5rem;
+}
+
+.not-found-text {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: #4F5B66;
+    margin: 2% auto;
+    font-size: 1.5rem;
+}
+
+.not-found-button {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: white;
+    padding: 10px 20px;
+    margin: 5% auto;
+    font-size: 1.5rem;
+    background-color: #0b5394;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+.not-found-button:hover {   
+    background-color: #4F5B66;
+}
