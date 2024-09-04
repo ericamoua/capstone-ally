@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import '../styles/listingsearch.css';
+import { Link } from 'react-router-dom';
+import searchCSS from  '../styles/listingsearch.module.css';
 import MapComponent from './MapComponent';
 
 const ListingSearch = () => {
@@ -82,12 +83,12 @@ const ListingSearch = () => {
   }, [listings, sortField, sortOrder]);
 
   return (
-    <div className='listing-search'>
-      <h4 className='listing-title'>Search Listings</h4>
+    <div className={searchCSS['listing-search']}>
+      <h4 className={searchCSS['listing-title']}>Search Listings</h4>
 
-      <form className='search-form' onSubmit={handleSearch}>
-        <div className="top-group">
-          <div className="form-group zipcode">
+      <form className={searchCSS['search-form']} onSubmit={handleSearch}>
+        <div className={searchCSS['top-group']}>
+          <div className={`${searchCSS['form-cont']} ${searchCSS.zipcode}`}>
             <input
               type="text"
               placeholder="Zipcode"
@@ -95,7 +96,7 @@ const ListingSearch = () => {
               onChange={(e) => setZipcode(e.target.value)}
             />
           </div>
-          <div className="form-group property-type">
+          <div className={`${searchCSS['form-cont']} ${searchCSS.propertyType}`}>
             <select
               value={propertyType}
               onChange={(e) => setPropertyType(e.target.value)}>
@@ -105,8 +106,8 @@ const ListingSearch = () => {
             </select>
           </div>
         </div>
-        <div className="bottom-group">
-          <div className="form-group min-price">
+        <div className={searchCSS['bottom-group']}>
+          <div className={`${searchCSS['form-cont']} ${searchCSS.minPrice}`} >
             <input
               type="text"
               placeholder="Min Price"
@@ -114,7 +115,7 @@ const ListingSearch = () => {
               onChange={(e) => setMinPrice(e.target.value)}
             />
           </div>
-          <div className="form-group max-price">
+          <div className={`${searchCSS['form-cont']} ${searchCSS.maxPrice}`}>
             <input
               type="text"
               placeholder="Max Price"
@@ -122,7 +123,7 @@ const ListingSearch = () => {
               onChange={(e) => setMaxPrice(e.target.value)}
             />
           </div>
-          <div className="form-group min-bedrooms">
+          <div className={`${searchCSS['form-cont']} ${searchCSS.minBedrooms}`} >
             <input
               type="number"
               placeholder="Min Bedrooms"
@@ -130,7 +131,7 @@ const ListingSearch = () => {
               onChange={(e) => setMinBedrooms(e.target.value)}
             />
           </div>
-          <div className="form-group max-bedrooms">
+          <div className={`${searchCSS['form-cont']} ${searchCSS.maxBedrooms}`}>
             <input
               type="number"
               placeholder="Max Bedrooms"
@@ -138,7 +139,7 @@ const ListingSearch = () => {
               onChange={(e) => setMaxBedrooms(e.target.value)}
             />
           </div>
-          <div className="form-group min-bathrooms">
+          <div className={`${searchCSS['form-cont']} ${searchCSS.minBathrooms}`}>
             <input
               type="number"
               placeholder="Min Bathrooms"
@@ -146,7 +147,7 @@ const ListingSearch = () => {
               onChange={(e) => setMinBathrooms(e.target.value)}
             />
           </div>
-          <div className="form-group max-bathrooms">
+          <div className={`${searchCSS['form-cont']}${searchCSS.maxBathrooms}`}>
             <input
               type="number"
               placeholder="Max Bathrooms"
@@ -156,8 +157,8 @@ const ListingSearch = () => {
           </div>
         </div>
 
-        <div className="sorting-options">
-          <button className="search-btn" type="submit">Search</button>
+        <div className={searchCSS['sorting-options']}>
+          <button className={searchCSS['search-btn']} type="submit">Search</button>
           <label>
             Sort By:
             <select value={sortField} onChange={(e) => setSortField(e.target.value)}>
@@ -171,8 +172,8 @@ const ListingSearch = () => {
             <label>
               Order:
               <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
+                <option value="asc">Low to High</option>
+                <option value="desc">High to Low</option>
               </select>
             </label>
           )}
@@ -183,38 +184,38 @@ const ListingSearch = () => {
 
       <div>
         {sortedListings.length > 0 ? (
-          <div className="info-box">
+          <div className={searchCSS['info-box']}>
             {sortedListings.map((listing, index) => (
-              <div key={listing.property_id} className="listing-item">
-                <div className="listing-number">{index + 1}</div> {/* Display the index number */}
-                <div className="primary-info">
+              <div key={listing.property_id} className={searchCSS['listing-item']}>
+                <div className={searchCSS.listingNumber}>{index + 1}</div> {/* Display the index number */}
+                <div className={searchCSS['primary-info']}>
                   {listing.primary_photo && (
                     <img
-                      className="listing-image"
+                      className={searchCSS.listingImage}
                       src={listing.primary_photo.href}
                       alt="Property"
                     />
                   )}
-                  <h4>{listing.location.address.line}</h4>
-                  <h4>
+                  <h3 className={searchCSS['listing-price']}>${listing.list_price}</h3>
+                  <h4 className={searchCSS['listing-address']}>{listing.location.address.line}</h4>
+                  <h4 className={searchCSS['listing-address']}>
                     {listing.location.address.city}, {listing.location.address.state}{' '}
                     {listing.location.address.postal_code}
                   </h4>
-                  <h4>${listing.list_price}</h4>
                 </div>
-                <div className="secondary-info">
-                  <ul className="list1">
+                <div className={searchCSS['secondary-info']}>
+                  <ul className={searchCSS.list1}>
                     <li>Located in {listing.location.address.city}</li>
                     <li>Built in {listing.description.year_built}</li>
                     <li>MLS #: {listing.property_id}</li>
                   </ul>
-                  <ul className="list2">
+                  <ul className={searchCSS.list2}>
                     <li>{listing.description.beds} Bedrooms</li>
                     <li>{listing.description.baths} Full Baths</li>
                     <li>{listing.description.sqft} Square Feet</li>
                   </ul>
                 </div>
-                <a href={`/listing/${listing.property_id}`}>More Details</a>
+                <a className={searchCSS['more-details']} href={`/listing/${listing.property_id}`}>More Details</a>
               </div>
             ))}
           </div>
@@ -223,7 +224,7 @@ const ListingSearch = () => {
         )}
       </div>
 
-      {error && <p className="error">{error}</p>}
+      {error && <p className={searchCSS.error}>{error}</p>}
     </div>
   );
 };
