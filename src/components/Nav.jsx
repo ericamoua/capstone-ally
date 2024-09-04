@@ -15,10 +15,11 @@ function BootNavbar() {
       <Navbar expand="lg" className={navCSS.bootNav}>
         <Container fluid>
           <Navbar.Brand ><img src={Logo} style={{ 
-  display: 'inline-block', 
-  width: '30%', 
-  height: '35%', 
-}}></img></Navbar.Brand>
+            display: 'inline-block', 
+            width: '30%', 
+            height: '35%', 
+          }}></img></Navbar.Brand>
+          
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -26,10 +27,13 @@ function BootNavbar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link as={Link} to="/search" style={{ color: 'black' }}>
+              <Nav.Link as={Link} to="/" style={{ color: 'white' }}>
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="/search" style={{ color: 'white' }}>
                 Find your home
               </Nav.Link>
-              <Nav.Link as={Link} to="/resource" style={{ color: 'black' }}>
+              <Nav.Link as={Link} to="/resource" style={{ color: 'white' }}>
                 Contact us
               </Nav.Link>
               <Form className="d-flex" style={{ margin: ".5rem" }}>
@@ -40,11 +44,11 @@ function BootNavbar() {
                 </Link>
               </Form>
             </Nav>
-            <div className={navCSS.SocialIcons}>
+            {/* <div className={navCSS.SocialIcons}>
               <SocialIcon url="https://twitter.com" style={{ margin: ".5rem" }} target="_blank" rel="noreferrer" />
               <SocialIcon url="https://www.facebook.com/" style={{ margin: ".5rem" }} target="_blank" rel="noreferrer" />
               <SocialIcon url="https://www.tiktok.com/en/" style={{ margin: ".5rem" }} target="_blank" rel="noreferrer" />
-            </div>
+            </div> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
