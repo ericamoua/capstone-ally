@@ -1,5 +1,6 @@
 // src/components/CarouselComponent.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import style from '../styles/carousel.module.css';
 import HouseLogo from '../assets/house-home-img-2.png';
@@ -9,6 +10,8 @@ import House3 from '../assets/house-3.jpg';
 
 
 const CarouselComponent = () => {
+  const navigate = useNavigate();
+
   return (
     <div className={ style.split}>
       <div className={style.slideImageSize}>
@@ -41,7 +44,7 @@ const CarouselComponent = () => {
       </div>
       <div className={style.reachOutBtn}>
         <img src={HouseLogo} alt="House" />
-        <button className={style.contactButton}>
+        <button className={style.contactButton} onClick={() => navigate('/resource')}>
           HERE
           <div className={style.iconButton}>
             <svg
