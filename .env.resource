@@ -1,2 +1,3 @@
 VITE_SERVER_PORT=3001
 VITE_API_URL=http://localhost:3001/api
+Google_Recaptcha_API_KEY='6LdOkjYqAAAAAL3WyeLXRWyMEgAnfPhiJGjlabiU'
