@@ -6,7 +6,7 @@ const GoogleLognIn = () => {
 
     const handleSignIn = () => {
         
-        window.location.href = 'http://localhost:30003/auth/google';
+        window.location.href = 'https://capstone-ally-api.vercel.app/auth/google';
     };
 
     return (

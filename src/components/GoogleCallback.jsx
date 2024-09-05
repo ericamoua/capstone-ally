@@ -9,7 +9,7 @@ const GoogleCallback = () => {
         const fetchUser = async () => {
             try {
                 // Make a request to your backend to check if the user is authenticated
-                const response = await fetch('http://localhost:30003/auth/login/success', {
+                const response = await fetch('https://capstone-ally-api.vercel.app/auth/login/success', {
                     method: 'GET',
                     credentials: 'include' // Include cookies for authentication
                 });
