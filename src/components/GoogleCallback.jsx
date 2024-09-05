@@ -9,7 +9,7 @@ const GoogleCallback = () => {
         const fetchUser = async () => {
             try {
                
-                const response = await fetch('https://capstone-ally-api.vercel.app/auth/login/success', {
+                const response = await fetch('https://ecommercev2-ytjg.onrender.com/auth/login/success', {
                     method: 'GET',
                     credentials: 'include' 
                 });
