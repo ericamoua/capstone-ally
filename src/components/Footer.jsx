@@ -11,7 +11,7 @@ function Footer() {
       <div className={footerCSS.footerContent}>
         <div className={footerCSS.newsletterContainer}>
           <h2>Newsletter</h2>
-          <p>Keep up with the housing market!</p>
+          <p className={footerCSS.links}>Keep up with the housing market!</p>
           <form>
             <input type="email" name="email" placeholder="Your email address" className={footerCSS.input} />
             <button type="submit" className={footerCSS.subBtn}>Subscribe</button>
@@ -21,22 +21,22 @@ function Footer() {
         <div className={footerCSS.footerLinks}>
           <div className={footerCSS.footerContainer}>
          <h3>Policies</h3>
-          <Link  style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Privacy Policy</Link>
-          <Link  style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Terms and Conditions</Link>
+          <Link  className={footerCSS.links} to='/'>Privacy Policy</Link>
+          <Link  className={footerCSS.links} to='/'>Terms and Conditions</Link>
           </div>
 
           <div className={footerCSS.footerContainer}>
             <h3>Site Links</h3>
-            <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Home</Link>
-            <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/search">Find Your Home </Link>
-            <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/resource'>Contact And Resources</Link>
+            <Link className={footerCSS.links} to='/'>Home</Link>
+            <Link  className={footerCSS.links} to="/search">Find Your Home </Link>
+            <Link className={footerCSS.links} to='/resource'>Contact And Resources</Link>
           </div>
 
           <div className={footerCSS.footerContainer}>
             <h3>First time home buyers</h3>
-            <Link  style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Brokers</Link>
-            <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Lenders</Link>
-            <Link  style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Lease to buy</Link>
+            <Link  className={footerCSS.links} to='/'>Brokers</Link>
+            <Link className={footerCSS.links} to='/'>Lenders</Link>
+            <Link  className={footerCSS.links} to='/'>Lease to buy</Link>
           </div>
         </div>
       </div>
