@@ -1,4 +1,4 @@
-// src/components/GoogleCallback.js
+
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,17 +8,17 @@ const GoogleCallback = () => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                // Make a request to your backend to check if the user is authenticated
+               
                 const response = await fetch('https://capstone-ally-api.vercel.app/auth/login/success', {
                     method: 'GET',
-                    credentials: 'include' // Include cookies for authentication
+                    credentials: 'include' 
                 });
 
                 if (response.ok) {
                     const data = await response.json();
                     console.log('User data:', data);
-                    // Redirect to a different page or set user context
-                    history.push('/dashboard'); // Or wherever you want to redirect
+                  
+                    history.push('/dashboard'); 
                 } else {
                     throw new Error('Authentication failed');
                 }

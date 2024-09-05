@@ -2,11 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const GoogleLognIn = () => {
-    const history = useNavigate();
+    const navigate = useNavigate(); 
 
     const handleSignIn = () => {
-        
-        window.location.href = 'https://capstone-ally-api.vercel.app/auth/google';
+       
+        const authUrl = 'https://my-backend.vercel.app/auth/google';
+        window.location.assign(authUrl);
     };
 
     return (
