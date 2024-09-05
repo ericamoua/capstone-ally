@@ -25,7 +25,7 @@ function Register() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:30003/api/signup', {
+      const response = await fetch('https://capstone-ally-api.vercel.app/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
