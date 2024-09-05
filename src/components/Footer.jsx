@@ -3,20 +3,11 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import footerCSS from '../styles/Footer.module.css'
 import { SocialIcon } from 'react-social-icons'
-
-
-
-
-
-
-
+import Logo from '../assets/logo-2.png'
 
 function Footer() {
   return (
     <footer>
-      <div className={footerCSS.footerLogoContainer}>
-      <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>LOGO</Link>
-      </div>
       <div className={footerCSS.footerContent}>
         <div className={footerCSS.newsletterContainer}>
           <h2>Newsletter</h2>
@@ -37,8 +28,8 @@ function Footer() {
           <div className={footerCSS.footerContainer}>
             <h3>Site Links</h3>
             <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Home</Link>
-           <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/Products"> Welcome Home Blog </Link>
-           <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>Careers</Link>
+            <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/search">Find Your Home </Link>
+            <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/resource'>Contact And Resources</Link>
           </div>
 
           <div className={footerCSS.footerContainer}>
