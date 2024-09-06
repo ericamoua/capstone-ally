@@ -5,6 +5,9 @@
     color: rgb(255, 255, 255);
     background: #00000080;
     padding:20px;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+
 }
 
 .learnMore {
