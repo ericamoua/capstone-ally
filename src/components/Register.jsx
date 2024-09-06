@@ -25,7 +25,7 @@ function Register() {
     setError('');
 
     try {
-      const response = await fetch('https://capstone-ally-api.vercel.app/api/signup', {
+      const response = await fetch('https://ecommercev2-ytjg.onrender.com/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
