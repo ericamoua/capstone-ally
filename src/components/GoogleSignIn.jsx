@@ -2,12 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const GoogleLognIn = () => {
-    const navigate = useNavigate(); 
+    const history = useNavigate();
 
     const handleSignIn = () => {
-       
-        const authUrl = 'https://ecommercev2-ytjg.onrender.com/google/callback';
-        window.location.assign(authUrl);
+        
+        window.location.href = 'https://ecommercev2-ytjg.onrender.com/auth/google';
     };
 
     return (

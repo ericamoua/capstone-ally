@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import searchCSS from  '../styles/listingsearch.module.css';
+import searchCSS from '../styles/listingsearch.module.css';
 import MapComponent from './MapComponent';
 
 const ListingSearch = () => {
@@ -19,23 +19,40 @@ const ListingSearch = () => {
   const [sortOrder, setSortOrder] = useState('asc');
 
   const handleSearch = async (e) => {
-    
+    e.preventDefault(); // Prevent page reload on form submission
+
+    const apiKey = '1c0f657840mshbdc692a2177d434p126a30jsn2297cf528c83'; 
+    let path = `/v2/for-sale-by-zipcode?zipcode=${zipcode}&offset=0&limit=42`;
+
+    if (propertyType && propertyType !== 'all') {
+      path += `&property_type=${propertyType}`;
+    }
+    if (minPrice) {
+      path += `&price_min=${minPrice}`;
+    }
+    if (maxPrice) {
+      path += `&price_max=${maxPrice}`;
+    }
+    if (minBedrooms) {
+      path += `&beds_min=${minBedrooms}`;
+    }
+    if (maxBedrooms) {
+      path += `&beds_max=${maxBedrooms}`;
+    }
+    if (minBathrooms) {
+      path += `&baths_min=${minBathrooms}`;
+    }
+    if (maxBathrooms) {
+      path += `&baths_max=${maxBathrooms}`;
+    }
+
     try {
-      const response = await fetch('http://localhost:3000/search-listings', {
-        method: 'POST',
+      const response = await fetch(`https://us-real-estate.p.rapidapi.com${path}`, {
+        method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
+          'x-rapidapi-key': apiKey,
+          'x-rapidapi-host': 'us-real-estate.p.rapidapi.com',
         },
-        body: JSON.stringify({
-          zipcode,
-          propertyType,
-          minPrice,
-          maxPrice,
-          minBedrooms,
-          maxBedrooms,
-          minBathrooms,
-          maxBathrooms,
-        }),
       });
 
       if (!response.ok) {
@@ -50,7 +67,7 @@ const ListingSearch = () => {
   };
 
   useEffect(() => {
-    handleSearch();
+    // Optionally fetch some initial data or handle side effects
   }, []);
 
   const sortedListings = useMemo(() => {
@@ -107,9 +124,9 @@ const ListingSearch = () => {
           </div>
         </div>
         <div className={searchCSS['bottom-group']}>
-          <div className={`${searchCSS['form-cont']} ${searchCSS.minPrice}`} >
+          <div className={`${searchCSS['form-cont']} ${searchCSS.minPrice}`}>
             <input
-              type="text"
+              type="number"
               placeholder="Min Price"
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
@@ -117,13 +134,13 @@ const ListingSearch = () => {
           </div>
           <div className={`${searchCSS['form-cont']} ${searchCSS.maxPrice}`}>
             <input
-              type="text"
+              type="number"
               placeholder="Max Price"
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
             />
           </div>
-          <div className={`${searchCSS['form-cont']} ${searchCSS.minBedrooms}`} >
+          <div className={`${searchCSS['form-cont']} ${searchCSS.minBedrooms}`}>
             <input
               type="number"
               placeholder="Min Bedrooms"
@@ -147,7 +164,7 @@ const ListingSearch = () => {
               onChange={(e) => setMinBathrooms(e.target.value)}
             />
           </div>
-          <div className={`${searchCSS['form-cont']}${searchCSS.maxBathrooms}`}>
+          <div className={`${searchCSS['form-cont']} ${searchCSS.maxBathrooms}`}>
             <input
               type="number"
               placeholder="Max Bathrooms"
@@ -187,7 +204,7 @@ const ListingSearch = () => {
           <div className={searchCSS['info-box']}>
             {sortedListings.map((listing, index) => (
               <div key={listing.property_id} className={searchCSS['listing-item']}>
-                <div className={searchCSS.listingNumber}>{index + 1}</div> {/* Display the index number */}
+                <div className={searchCSS.listingNumber}>{index + 1}</div>
                 <div className={searchCSS['primary-info']}>
                   {listing.primary_photo && (
                     <img
@@ -215,7 +232,9 @@ const ListingSearch = () => {
                     <li>{listing.description.sqft} Square Feet</li>
                   </ul>
                 </div>
-                <a className={searchCSS['more-details']} href={`/listing/${listing.property_id}`}>More Details</a>
+                <Link className={searchCSS['more-details']} to={`/listing/${listing.property_id}`}>
+                  More Details
+                </Link>
               </div>
             ))}
           </div>
