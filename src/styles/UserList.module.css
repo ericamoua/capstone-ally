@@ -1,0 +1,62 @@
+
+.container {
+    width: 80%;
+    margin:3rem;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.heading {
+    text-align: center;
+    color: #333;
+}
+
+.userForm,
+.userItem {
+    margin-bottom: 20px;
+}
+
+.inputField {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0B5394;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.userItem {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+}
+
+.userItem h2 {
+    margin: 0;
+}
+
+.userItem p {
+    margin: 5px 0;
+}
+
+.userActions {
+    margin-top: 10px;
+}
