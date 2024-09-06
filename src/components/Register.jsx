@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import registerCss from '../styles/Register.module.css';
+import companyLogo from '../assets/budget-logo.png';
 
 function Register() {
   const [username, setUsername] = useState('');  
@@ -58,10 +59,11 @@ function Register() {
 
   return (
     <div className={registerCss.formBody}> 
-      <form className={registerCss.form} onSubmit={handleSubmit}>
-        <div className={registerCss.formContainer}>
-          <h1>Register</h1>
-          {error && <p className={registerCss.error}>{error}</p>}
+      <div className={registerCss.formContainer}>
+        <img src={companyLogo} alt="Company Logo" className={registerCss.homeLogo} />
+        <h1>Register</h1>
+        {error && <p className={registerCss.error}>{error}</p>}
+        <form onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="Email Address"
@@ -76,7 +78,6 @@ function Register() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-         
           <label className={registerCss.checkboxLabel}>
             <input
               type="checkbox"
@@ -86,8 +87,8 @@ function Register() {
             Admin
           </label>
           <button type="submit" className={registerCss.submitBtn}>Register</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

@@ -1,120 +1,105 @@
-
-
-
-
-.logoImages{
+.logoImages {
     width: 25%;
 }
 
-.formContainer{
- text-align: center;
- display: flex;
- border:1px solid black;
- width:100%;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- 
+.formContainer {
+    text-align: center;
+    display: flex;
+    border: 1px solid black;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-
-.form{
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 1px solid #4F5B66;
+    background-color: rgba(255, 255, 255, 0.9);
     height: 90vh;
-    margin: 4rem;
+    margin: 4rem auto;
     border-radius: 0.2rem;
-    background-color: rgba(255, 255, 255, 0.489);
+    padding: 2rem;
+    max-width: 500px;
+    box-sizing: border-box;
 }
 
-
-.form input{
-    width:55%;
-    height:3rem;
-    margin: 2rem;
-    padding: .7rem;
-    border-radius: .2rem;
-    border-color:black;
+.form input {
+    width: 100%;
+    max-width: 400px;
+    height: 3rem;
+    margin: 1rem 0;
+    padding: 0.7rem;
+    border-radius: 0.2rem;
+    border: 1px solid gainsboro;
 }
 
-textarea input{
-       width:55%;
-    height:3rem;
-    margin: 2rem;
-    padding: .7rem;
-    border-radius: .2rem;
-    border-color:black;
+textarea {
+    width: 100%;
+    max-width: 400px;
+    height: 6rem;
 }
 
-
-
-
-
-
-textarea{
-    width:55%;
-    height:6rem;
+.buttonContainer {
+    margin: 1rem;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-
-.buttonContainer{
-margin:1rem;
-
-}
-
-
-
-
-
-
 
 input {
     outline: none;
 }
 
-
-
-
-.googleBtn{
+.googleBtn {
     border-radius: 50px;
-    width: 60%;
+    width: 100%;
+    max-width: 400px;
     background-color: white;
     text-align: center;
     border: 1px solid #dadce0;
     color: #3c4043;
+    margin: 0.5rem 0;
 }
 
-
-
-.submitBtn{
-    border-radius: 50px;
-    width: 60%;
-    border: 1px solid #dadce0 ;
+.submitBtn {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #dadce0;
     background-color: #0B5394;
-    padding: .7rem;
-    color:white;
+    padding: 0.7rem;
+    color: white;
+    margin: 0.5rem 0;
 }
 
-
-
-
-
-.googleBtn:hover{
-    background-color:#dadce0;
+.googleBtn:hover {
+    background-color: #dadce0;
     transition: 800ms;
 }
 
-.googleBtnContainer{
+.googleBtnContainer {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
 }
 
-
-.formBody{
+.formBody {
     background-image: url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyaminmellish-106399.jpg&fm=jpg');
     background-size: cover;
-        background-position: center;
+    background-position: center;
+}
+
+.homeLogo {
+    width: 100%;
+    height: 25rem;
+    padding: 0;
+    margin: 0;
 }
