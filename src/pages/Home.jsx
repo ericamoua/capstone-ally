@@ -13,7 +13,7 @@ const Home = () => {
     const data = [
         {
             id: 0,
-            label: "Step 1: Assess Your Budjet",
+            label: "Step 1: Assess Your Budget",
             renderContent: () => (
                 <div>
                     <p>At Budget Nest, we help you start your home-buying journey by assessing your financial situation. Use our budget calculator and explore our resources on loans and mortgages to determine the perfect price range for your dream home.</p>
