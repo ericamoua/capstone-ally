@@ -5,7 +5,7 @@ function UserList() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('https://capstone-ally-api.vercel.app/api/users')
+        fetch('https://ecommercev2-ytjg.onrender.com/api/users')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
