@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import registerCss from '../styles/Register.module.css';
-import companyLogo from '../assets/budget-logo.png';
+
 
 function Register() {
   const [username, setUsername] = useState('');  
@@ -60,7 +60,6 @@ function Register() {
   return (
     <div className={registerCss.formBody}> 
       <div className={registerCss.formContainer}>
-        <img src={companyLogo} alt="Company Logo" className={registerCss.homeLogo} />
         <h1>Register</h1>
         {error && <p className={registerCss.error}>{error}</p>}
         <form onSubmit={handleSubmit}>
