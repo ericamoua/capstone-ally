@@ -80,6 +80,7 @@ function Login() {
     return (
         <div className={logInCss.formBody}>
             <div className={logInCss.formContainer}>
+                
                 <form className={logInCss.form} onSubmit={handleSubmit}>
                     <div className={logInCss.logoContainer}>
                         <img src={companyLogo} className={logInCss.homeLogo} alt="Company Logo" />
