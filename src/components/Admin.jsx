@@ -6,7 +6,7 @@ function UserList() {
     const [editingUser, setEditingUser] = useState(null);
 
     useEffect(() => {
-        fetch('https://capstone-ally-api.vercel.app/api/users')
+        fetch('https://ecommercev2-ytjg.onrender.com/api/users')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -20,7 +20,7 @@ function UserList() {
     const handleUpdate = () => {
         if (!editingUser) return;
 
-        fetch(`https://capstone-ally-api.vercel.app/api/users/${editingUser.id}`, {
+        fetch(`https://ecommercev2-ytjg.onrender.com//api/users/${editingUser.id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(editingUser),
@@ -34,7 +34,7 @@ function UserList() {
     };
 
     const handleDelete = (id) => {
-        fetch(`https://capstone-ally-api.vercel.app/api/users/${id}`, {
+        fetch(`https://ecommercev2-ytjg.onrender.com/api/users/${id}`, {
             method: 'DELETE',
         })
             .then(() => {
@@ -47,62 +47,40 @@ function UserList() {
         <div className={styles.container}>
             <h1 className={styles.heading}>Users</h1>
 
-            <table className={styles.userTable}>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {users.map(user => (
-                        <tr key={user.id}>
-                            <td>
-                                {editingUser && editingUser.id === user.id ? (
-                                    <input
-                                        type="text"
-                                        value={editingUser.name}
-                                        onChange={(e) => setEditingUser({ ...editingUser, name: e.target.value })}
-                                        className={styles.inputField}
-                                    />
-                                ) : (
-                                    user.name
-                                )}
-                            </td>
-                            <td>
-                                {editingUser && editingUser.id === user.id ? (
-                                    <input
-                                        type="email"
-                                        value={editingUser.email}
-                                        onChange={(e) => setEditingUser({ ...editingUser, email: e.target.value })}
-                                        className={styles.inputField}
-                                    />
-                               
-                                    ) : (
-                                        user.email
-                                    )}
-                                </td>
-                                <td>
-                                    {editingUser && editingUser.id === user.id ? (
-                                        <div>
-                                            <button onClick={handleUpdate} className={styles.button}>Save</button>
-                                            <button onClick={() => setEditingUser(null)} className={styles.button}>Cancel</button>
-                                        </div>
-                                    ) : (
-                                        <div>
-                                            <button onClick={() => setEditingUser(user)} className={styles.button}>Edit</button>
-                                            <button onClick={() => handleDelete(user.id)} className={styles.button}>Delete</button>
-                                        </div>
-                                    )}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        );
-    }
-    
-    export default UserList;
-    
+            {users.map(user => (
+                <div key={user.id} className={styles.userItem}>
+                    {editingUser && editingUser.id === user.id ? (
+                        <div>
+                            <h2>Edit User</h2>
+                            <input
+                                type="text"
+                                value={editingUser.name}
+                                onChange={(e) => setEditingUser({ ...editingUser, name: e.target.value })}
+                                className={styles.inputField}
+                            />
+                            <input
+                                type="email"
+                                value={editingUser.email}
+                                onChange={(e) => setEditingUser({ ...editingUser, email: e.target.value })}
+                                className={styles.inputField}
+                            />
+                            <button onClick={handleUpdate} className={styles.button}>Save</button>
+                            <button onClick={() => setEditingUser(null)} className={styles.button}>Cancel</button>
+                        </div>
+                    ) : (
+                        <div>
+                            <h2>{user.name}</h2>
+                            <p>{user.email}</p>
+                            <div className={styles.userActions}>
+                                <button onClick={() => setEditingUser(user)} className={styles.button}>Edit</button>
+                                <button onClick={() => handleDelete(user.id)} className={styles.button}>Delete</button>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            ))}
+        </div>
+    );
+}
+
+export default UserList;
