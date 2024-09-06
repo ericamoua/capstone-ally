@@ -20,7 +20,7 @@ function UserList() {
     const handleUpdate = () => {
         if (!editingUser) return;
 
-        fetch(`https://ecommercev2-ytjg.onrender.com//api/users/${editingUser.id}`, {
+        fetch(`https://ecommercev2-ytjg.onrender.com/api/users/${editingUser.id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(editingUser),
