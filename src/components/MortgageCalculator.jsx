@@ -63,7 +63,7 @@ const MortgageCalculator = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-6 mx-auto calculate-form">
+        <div className="col-md-10 mx-auto calculate-form">
           <div className="card card-body text-center">
             <h1 className="heading display-5 pb-3">Mortgage Calculator</h1>
             <form id="loan-form" onSubmit={handleCalculate}>

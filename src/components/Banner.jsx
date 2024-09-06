@@ -5,8 +5,8 @@ const Banner = () => {
     
     return (
         <div className={banner.banner}>
-            <p>Find your dream home, click below for more</p>
-            <a href='/search' className={banner.learnMore}>Click here</a>
+            <h1>Your Next Chapter Starts</h1>
+            <a href='/search' className={banner.learnMore}>HERE</a>
         </div>
     );
 };

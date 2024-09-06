@@ -2,15 +2,19 @@
     font-size: 50px;
     font-weight: bold;
     text-align: center;
-    color: black
+    color: rgb(255, 255, 255);
+    background: #00000080;
+    padding:20px;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+
 }
 
 .learnMore {
-    color: #ffffff;
     text-decoration: none;
     font-size: 30px;
-    color: black;
-    border: black 4px solid;
+    color: rgb(255, 255, 255);
+    border: rgb(255, 255, 255) 4px solid;
     border-radius: 8%;
 }
 
