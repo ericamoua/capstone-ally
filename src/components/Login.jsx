@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logInCss from '../styles/Login.module.css';
-import { SocialIcon } from 'react-social-icons';
+import { SocialIcon } from 'react-social-icons'
+import companyLogo from '..//assets/budget-logo.png';
 
 function Login() {
     const [username, setEmail] = useState('');
@@ -59,10 +60,15 @@ function Login() {
     return (
         <div className={logInCss.formBody}>
           <div className={logInCss.formContainer}>
+      
             <form className={logInCss.form} onSubmit={handleSubmit}>
+            <div className={logInCss.logoContainer}>
+      <img src={companyLogo} className={logInCss.homeLogo}></img>
+      <h1>Login</h1>
+    </div>
                 <div className={logInCss.logInContainer}>
-                    <h1>Login</h1>
-                    {error && <p>{error}</p>}
+                   
+                {error && <p style={{ color: 'red' }}>{error}</p>}
                     <input
                         type="email"
                         placeholder="Email Address"
@@ -80,7 +86,7 @@ function Login() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <div className={logInCss.signUpContainer}>
-                        <button type="submit" className={logInCss.submitBtn}>Submit</button>
+                        <button type="submit" className={logInCss.submitBtn}>Log In</button>
                         <div className={logInCss.signUpContainer}>
                             <p>Don't have an account?</p>
                             <Link to="/register">Sign up</Link>
