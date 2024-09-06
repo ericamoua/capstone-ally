@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import  GoogleReCaptcha  from 'react-google-recaptcha';
+import  GoogleReCaptcha  from 'react-google-recaptcha';
 import styles from "/src/styles/Resource.module.css"; // Using CSS module
 
 const Resource = () => {
@@ -10,14 +10,14 @@ const Resource = () => {
   const [subject, setSubject] = useState('');
   const [comment, setComment] = useState('');
   const [errors, setErrors] = useState({});
+  const [captchaIsDone, setCaptchaIsDone] = useState(false); 
 
-  const [capychaIsDone, setCapychaIsDone] = useState(false);
   const Google_Recaptcha_API_KEY ='6LeYBRcqAAAAAICErRmaGeu6gKKyqIVZNgK3evcw';
 
   // Recaptcha change handler
   function onChange() {
-    console.log('Recaptcha changed');
-    setCapychaIsDone(!capychaIsDone);
+    console.log('Recaptcha completed');
+    setCaptchaIsDone(true); 
   }
 
   // Form validation logic
@@ -60,9 +60,11 @@ const Resource = () => {
       setErrors(prev => { const { comment, ...rest } = prev; return rest; });
     }
 
-    if (valid && capychaIsDone) {
-      console.log("Form submitted");
-      
+    // Submit form only if valid and captcha is done
+    if (valid && captchaIsDone) {
+      handleSubmit();
+    } else if (!captchaIsDone) {
+      console.log("Captcha not completed");
     }
   };
 
@@ -91,7 +93,6 @@ const Resource = () => {
     }
   };
 
-
   return (
     <>
       <div className={styles.contactContainer}>
@@ -102,7 +103,7 @@ const Resource = () => {
           <h2 className={styles.contactTextLarge}>We would love to hear from you!</h2>
           <p className={styles.contactTextSmall}>We value your feedback!</p>
           <form className={styles.contactForm} onSubmit={validateForm}>
-            <div className={`${styles.formc} ${errors.firstName ? styles.error : ''}`}>
+          <div className={`${styles.formc} ${errors.firstName ? styles.error : ''}`}>
               <label>First Name:</label>
               <input
                 className={styles.userInput}
@@ -152,18 +153,18 @@ const Resource = () => {
               {errors.comment && <div className={styles.errorMessage}>{errors.subject}</div>}
             </div>
 
-            {/* <GoogleReCaptcha
+            <GoogleReCaptcha
               sitekey={Google_Recaptcha_API_KEY}
               onChange={onChange}
             />
-            {captchaIsDone ? ( */}
+            {captchaIsDone ? (
               <button className={styles.submitButton}>
                 Submit
               </button>
-            {/* ) : null} */}
+            ) : null}
           </form>
         </div>
-      </div> 
+      </div>
 
       <main>
         <section className={styles.hero}>
@@ -195,6 +196,5 @@ const Resource = () => {
     </>
   );
 };
-
 
 export default Resource;
