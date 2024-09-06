@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const MortgageCalculator = () => {
   // these go into api
@@ -20,8 +20,6 @@ const MortgageCalculator = () => {
   const [isCalculated, setIsCalculated] = useState(false);
 
   const handleCalculate = async () => {
-    let output;
-
     const response = await fetch(`https://api.api-ninjas.com/v1/mortgagecalculator?home_value=${home_value}&downpayment=${downpayment}&interest_rate=${interest}&duration_years=${duration_years}&monthly_hoa=${monthly_hoa}&annual_property_tax=${annual_property_tax}`, {
       method: 'GET',
       headers: {
@@ -35,15 +33,12 @@ const MortgageCalculator = () => {
       }
       return response.json();
     })
-    .then(data => {
-      output = data;
-    })
     .catch(error => {
       console.error('Error:', error);
     });
 
     // Deconstruct the output object
-    const { annual_payment, monthly_payment, total_interest_paid } = output;
+    const { annual_payment, monthly_payment, total_interest_paid } = response;
 
     // Set the state with the output values
     setMonthly_payment(monthly_payment.total);
@@ -256,4 +251,4 @@ const MortgageCalculator = () => {
   );
 };
 
-export default MortgageCalculator;
+export default MortgageCalculator; 
