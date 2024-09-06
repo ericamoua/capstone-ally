@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleReCaptchaProvider, GoogleReCaptcha } from 'react-google-recaptcha-v3';
+// import  GoogleReCaptcha  from 'react-google-recaptcha';
 import styles from "/src/styles/Resource.module.css"; // Using CSS module
 
 const Resource = () => {
@@ -12,7 +12,7 @@ const Resource = () => {
   const [errors, setErrors] = useState({});
 
   const [capychaIsDone, setCapychaIsDone] = useState(false);
-  const Google_Recaptcha_API_KEY ='6LdOkjYqAAAAAL3WyeLXRWyMEgAnfPhiJGjlabiU';
+  const Google_Recaptcha_API_KEY ='6LeYBRcqAAAAAICErRmaGeu6gKKyqIVZNgK3evcw';
 
   // Recaptcha change handler
   function onChange() {
@@ -62,9 +62,35 @@ const Resource = () => {
 
     if (valid && capychaIsDone) {
       console.log("Form submitted");
-      // Handle form submission
+      
     }
   };
+
+  // Handle form submission
+  const handleSubmit = async () => {
+    const formData = {
+      firstName,
+      lastName,
+      email,
+      subject,
+      comment
+    };
+
+    const response = await fetch('https://ecommercev2-ytjg.onrender.com/api/submit-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+      console.log('Form data submitted successfully');
+    } else {
+      console.error('Error submitting form data');
+    }
+  };
+
 
   return (
     <>
@@ -84,7 +110,7 @@ const Resource = () => {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
-              {errors.firstName && <p>{errors.firstName}</p>}
+              {errors.firstName && <div className={styles.errorMessage}>{errors.firstName}</div>}
             </div>
             <div className={`${styles.formc} ${errors.lastName ? styles.error : ''}`}>
               <label>Last Name:</label>
@@ -94,7 +120,7 @@ const Resource = () => {
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
-              {errors.lastName && <p>{errors.lastName}</p>}
+              {errors.lastName && <div className={styles.errorMessage}>{errors.lastName}</div>}
             </div>
             <div className={`${styles.formc} ${errors.email ? styles.error : ''}`}>
               <label>Email:</label>
@@ -104,7 +130,7 @@ const Resource = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              {errors.email && <p>{errors.email}</p>}
+              {errors.email && <div className={styles.errorMessage}>{errors.email}</div>}
             </div>
             <div className={`${styles.formc} ${errors.subject ? styles.error : ''}`}>
               <label>Subject:</label>
@@ -114,7 +140,7 @@ const Resource = () => {
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
               />
-              {errors.subject && <p>{errors.subject}</p>}
+              {errors.subject && <div className={styles.errorMessage}>{errors.subject}</div>}
             </div>
             <div className={`${styles.formc} ${errors.comment ? styles.error : ''}`}>
               <label>Comments / Questions:</label>
@@ -123,29 +149,21 @@ const Resource = () => {
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
               />
-              {errors.comment && <p>{errors.comment}</p>}
+              {errors.comment && <div className={styles.errorMessage}>{errors.subject}</div>}
             </div>
 
-            <GoogleReCaptchaProvider reCaptchaKey={Google_Recaptcha_API_KEY}>
-  <GoogleReCaptcha
-    sitekey={Google_Recaptcha_API_KEY}
-    onVerify={token => setCapychaIsDone(!!token)}
-  />
-</GoogleReCaptchaProvider>
-            {capychaIsDone ? (
+            {/* <GoogleReCaptcha
+              sitekey={Google_Recaptcha_API_KEY}
+              onChange={onChange}
+            />
+            {captchaIsDone ? ( */}
               <button className={styles.submitButton}>
-                <span className={styles.circle1}></span>
-                <span className={styles.circle2}></span>
-                <span className={styles.circle3}></span>
-                <span className={styles.circle4}></span>
-                <span className={styles.circle5}></span>
-                <span className={styles.text}>Submit</span>
+                Submit
               </button>
-            ) : null}
+            {/* ) : null} */}
           </form>
         </div>
-      </div>
-  
+      </div> 
 
       <main>
         <section className={styles.hero}>
