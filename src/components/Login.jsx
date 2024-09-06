@@ -27,7 +27,7 @@ function Login() {
         setError('');
 
         try {
-            const response = await fetch('https://capstone-ally-api.vercel.app/api/login', {
+            const response = await fetch('https://ecommercev2-ytjg.onrender.com/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -11,7 +11,8 @@ import Page2 from './pages/Page2'
 import Page3 from './pages/Page3'
 import GoogleSignIn from './components/GoogleSignIn';
 import GoogleCallback from './components/GoogleCallback';
-
+import Admin from './components/Admin'
+import Error from './pages/Error'
 function App() {
   return (
     <Router>
@@ -23,8 +24,10 @@ function App() {
        <Route path="/register" element={<Register/>}/>
        <Route path="/resource" element={<Contact/>}/>
        <Route path="/search" element={<FindHome/>}/>
-       <Route path="/glogin" element={<GoogleSignIn/>} />
-                <Route path="/auth/google/callback" element={<GoogleCallback/>} />
+       <Route path="/google" element={<GoogleSignIn/>} />
+       <Route path="/auth/google/callback" element={<GoogleCallback/>} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/*" element={<Error />} />
        <Route path="/page1" element={<Page1 />} />
         <Route path="/page2" element={<Page2 />} />
         <Route path="/page3" element={<Page3 />} />

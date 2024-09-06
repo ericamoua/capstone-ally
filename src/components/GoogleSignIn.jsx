@@ -6,7 +6,7 @@ const GoogleLognIn = () => {
 
     const handleSignIn = () => {
        
-        const authUrl = 'https://my-backend.vercel.app/auth/google';
+        const authUrl = 'https://ecommercev2-ytjg.onrender.com/auth/google';
         window.location.assign(authUrl);
     };
 

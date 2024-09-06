@@ -6,7 +6,7 @@ function UserList() {
 
     // Fetch the user data when the component mounts
     useEffect(() => {
-        fetch('http://localhost:30003/api/users')
+        fetch('https://ecommercev2-ytjg.onrender.com/api/users')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -15,9 +15,8 @@ function UserList() {
             })
             .then(data => setUsers(data))
             .catch(error => console.error('There has been a problem with your fetch operation:', error));
-    }, []); // Empty dependency array means this effect runs once on mount
-
-    // Display the user data
+    }, []); 
+   
     return (
         <div>
             <h1>Users</h1>
@@ -25,7 +24,7 @@ function UserList() {
                 <div key={user.id}>
                     <h2>{user.name}</h2>
                     <p>{user.email}</p>
-                    {/* Add more fields as necessary */}
+                 
                 </div>
             ))}
         </div>
