@@ -19,7 +19,7 @@ const ListingSearch = () => {
   const [sortOrder, setSortOrder] = useState('asc');
 
   const handleSearch = async (e) => {
-    
+    e.preventDefault(); // Prevent page reload on form submission
 
     const apiKey = '1c0f657840mshbdc692a2177d434p126a30jsn2297cf528c83'; 
     let path = `/v2/for-sale-by-zipcode?zipcode=${zipcode}&offset=0&limit=42`;
@@ -50,7 +50,7 @@ const ListingSearch = () => {
       const response = await fetch(`https://us-real-estate.p.rapidapi.com${path}`, {
         method: 'GET',
         headers: {
-          'x-rapidapi-key': '1c0f657840mshbdc692a2177d434p126a30jsn2297cf528c83',
+          'x-rapidapi-key': apiKey,
           'x-rapidapi-host': 'us-real-estate.p.rapidapi.com',
         },
       });
@@ -67,7 +67,7 @@ const ListingSearch = () => {
   };
 
   useEffect(() => {
-    handleSearch();
+    // Optionally fetch some initial data or handle side effects
   }, []);
 
   const sortedListings = useMemo(() => {
@@ -126,7 +126,7 @@ const ListingSearch = () => {
         <div className={searchCSS['bottom-group']}>
           <div className={`${searchCSS['form-cont']} ${searchCSS.minPrice}`}>
             <input
-              type="text"
+              type="number"
               placeholder="Min Price"
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
@@ -134,7 +134,7 @@ const ListingSearch = () => {
           </div>
           <div className={`${searchCSS['form-cont']} ${searchCSS.maxPrice}`}>
             <input
-              type="text"
+              type="number"
               placeholder="Max Price"
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
