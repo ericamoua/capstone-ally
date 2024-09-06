@@ -4,6 +4,10 @@
   height: 60px;
   line-height: 60px;
   width: 100%;
+<<<<<<< HEAD
+=======
+  display: flex;
+>>>>>>> 21d6498cf8eed03729a7b70f8b46631bcb384841
 }
 
 .logoImg {
@@ -71,7 +75,7 @@
   font-size: 0.7em;
   height: 50px;
   letter-spacing: 1px;
-  margin: 0 20px;
+  margin: 0 5px;
   padding: 0 4px;
   position: relative;
   text-decoration: none;
@@ -127,6 +131,10 @@
                     Mobile Menu Menu Icon
   ======================================================*/
 @media(max-width: 768px) {
+ .nav-wrapper #menu {
+    display: none;
+ }
+
   .menuIcon {
     cursor: pointer;
     display: block;
@@ -258,10 +266,10 @@
   }
 }
 
-
 /*======================================================
                    Responsive Mobile Menu 
   ======================================================*/
+<<<<<<< HEAD
 .overlay-menu {
   background: lightblue;
   color: rgb(13, 26, 38);
@@ -303,3 +311,28 @@
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
+=======
+  .overlay-menu {
+    background: rgba(0, 0, 0, 0.8);
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 15;
+  }
+  
+  .overlay-menu ul, .overlay-menu li {
+    display: block;
+    position: relative;
+  }
+  
+  .overlay-menu li a {
+    display: block;
+    padding: 10px 0;
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 3%;
+    color: white; /* Normal color */
+  }
+>>>>>>> 21d6498cf8eed03729a7b70f8b46631bcb384841

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/Navbar.css';
 import Logo from '../assets/logo-2.png'
 
@@ -10,6 +10,11 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleMenuToggle = () => {
+    console.log(menuToggle);
+    setMenuToggle(!menuToggle);
+  }
+
   return (
     <header>
       <nav id="navbar" className="">
@@ -20,11 +25,12 @@ function Navbar() {
           <ul id="menu">
             <li><a href="/">Home</a></li>
             <li><a href="/search">Find Your Home</a></li>
-            <li><a href="/resource">Contact And Resources</a></li>
+            <li><a href="/resource">Contact</a></li>
             <li><a href="/login">Login</a></li>
           </ul>
         </div>
       </nav>
+<<<<<<< HEAD
       <div className="menuIcon" onClick={handleMenuClick}>
         <span className="icon icon-bars"></span>
         <span className="icon icon-bars overlay"></span>
@@ -40,7 +46,25 @@ function Navbar() {
         </div>
       )}
     </header>
+=======
+      <div className="menuIcon" onClick={handleMenuToggle}>
+        <span className="icon icon-bars"></span>
+        <span className="icon icon-bars overlay"></span>
+      </div>
+
+      {menuToggle && (
+        <div className="overlay-menu">
+          <ul id="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/search">Find Your Home</a></li>
+            <li><a href="/resource">Contact</a></li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+        </div>
+      )}
+    </>
+>>>>>>> 21d6498cf8eed03729a7b70f8b46631bcb384841
   );
 }
 
-export default Navbar;
+export default Navbar; 

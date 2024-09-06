@@ -1,0 +1,41 @@
+.container {
+    padding: 20px;
+}
+
+.heading {
+    margin-bottom: 20px;
+}
+
+.userTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.userTable th, .userTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.userTable th {
+    background-color: #f4f4f4;
+}
+
+.inputField {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
