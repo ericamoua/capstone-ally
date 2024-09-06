@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../styles/UserList.module.css'; 
+import styles from '../styles/UserList.module.css';
 
 function UserList() {
     const [users, setUsers] = useState([]);
     const [editingUser, setEditingUser] = useState(null);
-    const [newUser, setNewUser] = useState({ name: '', email: '' });
 
     useEffect(() => {
         fetch('https://capstone-ally-api.vercel.app/api/users')
@@ -18,11 +17,13 @@ function UserList() {
             .catch(error => console.error('Error fetching users:', error));
     }, []);
 
-    const handleUpdate = (user) => {
-        fetch(`https://capstone-ally-api.vercel.app/api/users/${user.id}`, {
+    const handleUpdate = () => {
+        if (!editingUser) return;
+
+        fetch(`https://capstone-ally-api.vercel.app/api/users/${editingUser.id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(user),
+            body: JSON.stringify(editingUser),
         })
             .then(response => response.json())
             .then(updatedUser => {
@@ -42,41 +43,9 @@ function UserList() {
             .catch(error => console.error('Error deleting user:', error));
     };
 
-    const handleAdd = () => {
-        fetch('https://capstone-ally-api.vercel.app/api/users', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newUser),
-        })
-            .then(response => response.json())
-            .then(addedUser => {
-                setUsers([...users, addedUser]);
-                setNewUser({ name: '', email: '' });
-            })
-            .catch(error => console.error('Error adding user:', error));
-    };
-
     return (
         <div className={styles.container}>
             <h1 className={styles.heading}>Users</h1>
-            <div className={styles.userForm}>
-                <h2>Add New User</h2>
-                <input
-                    type="text"
-                    placeholder="Name"
-                    value={newUser.name}
-                    onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
-                    className={styles.inputField}
-                />
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={newUser.email}
-                    onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-                    className={styles.inputField}
-                />
-                <button onClick={handleAdd} className={styles.button}>Add User</button>
-            </div>
 
             {users.map(user => (
                 <div key={user.id} className={styles.userItem}>
@@ -95,7 +64,7 @@ function UserList() {
                                 onChange={(e) => setEditingUser({ ...editingUser, email: e.target.value })}
                                 className={styles.inputField}
                             />
-                            <button onClick={() => handleUpdate(editingUser)} className={styles.button}>Save</button>
+                            <button onClick={handleUpdate} className={styles.button}>Save</button>
                             <button onClick={() => setEditingUser(null)} className={styles.button}>Cancel</button>
                         </div>
                     ) : (
