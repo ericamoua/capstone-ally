@@ -11,6 +11,7 @@ import Page2 from './pages/Page2'
 import Page3 from './pages/Page3'
 import GoogleSignIn from './components/GoogleSignIn';
 import GoogleCallback from './components/GoogleCallback';
+import ListingDetails from "./components/ListingDetails"
 import Admin from './components/Admin'
 import Error from './pages/Error'
 function App() {
@@ -24,6 +25,7 @@ function App() {
        <Route path="/register" element={<Register/>}/>
        <Route path="/resource" element={<Contact/>}/>
        <Route path="/search" element={<FindHome/>}/>
+      <Route path="/listing/:id" element={<ListingDetails />} />
        <Route path="/google" element={<GoogleSignIn/>} />
        <Route path="/auth/google/callback" element={<GoogleCallback/>} />
         <Route path="/admin" element={<Admin />} />
