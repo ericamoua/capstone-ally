@@ -6,7 +6,7 @@ const GoogleLognIn = () => {
 
     const handleSignIn = () => {
        
-        const authUrl = 'https://ecommercev2-ytjg.onrender.com/auth/google/callback';
+        const authUrl = 'https://ecommercev2-ytjg.onrender.com/auth/google';
         window.location.assign(authUrl);
     };
 
