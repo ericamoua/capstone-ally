@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GoogleReCaptcha from 'react-google-recaptcha';
+import  GoogleReCaptcha  from 'react-google-recaptcha';
 import styles from "/src/styles/Resource.module.css"; // Using CSS module
 
 const Resource = () => {
@@ -10,10 +10,9 @@ const Resource = () => {
   const [subject, setSubject] = useState('');
   const [comment, setComment] = useState('');
   const [errors, setErrors] = useState({});
-  const [captchaIsDone, setCaptchaIsDone] = useState(false);
+  const [captchaIsDone, setCaptchaIsDone] = useState(false); 
 
-  // Fetch ReCaptcha API key from environment variable
-  const Google_Recaptcha_API_KEY = import.meta.env.VITE_Google_Recaptcha_API_KEY;
+  const Google_Recaptcha_API_KEY ='6LeYBRcqAAAAAICErRmaGeu6gKKyqIVZNgK3evcw';
 
   // Recaptcha change handler
   function onChange() {
