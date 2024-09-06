@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logInCss from '../styles/Login.module.css';
 import { SocialIcon } from 'react-social-icons';
-import companyLogo from '..//assets/budget-logo.png';
+
 
 function Login() {
     const [username, setEmail] = useState('');
@@ -82,10 +82,8 @@ function Login() {
             <div className={logInCss.formContainer}>
                 
                 <form className={logInCss.form} onSubmit={handleSubmit}>
-                    <div className={logInCss.logoContainer}>
-                        <img src={companyLogo} className={logInCss.homeLogo} alt="Company Logo" />
-                        <h1>Login</h1>
-                    </div>
+                <h1>Login</h1>
+                  
                     <div className={logInCss.logInContainer}>
                         {error && <p style={{ color: 'red' }}>{error}</p>}
                         <input
