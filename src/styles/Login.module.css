@@ -1,5 +1,6 @@
 .logoImages {
     width: 25%;
+    height: 30%;
 }
 
 .formContainer {
@@ -20,11 +21,11 @@
     text-align: center;
     background-color: rgba(255, 255, 255, 0.9);
     height: 90vh;
-    margin: 4rem auto;
+    margin: 4rem ;
     border-radius: 0.2rem;
     padding: 2rem;
     max-width: 500px;
-    box-sizing: border-box;
+
 }
 
 .form input {
@@ -116,3 +117,4 @@ input {
     color: white;
     margin: 0.5rem 0;
 }
+
