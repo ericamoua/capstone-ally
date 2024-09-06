@@ -1,3 +1,3 @@
 VITE_SERVER_PORT=3001
 VITE_API_URL=https://main.d2m4jxyp4by48k.amplifyapp.com/
-Google_Recaptcha_API_KEY='6LdOkjYqAAAAAL3WyeLXRWyMEgAnfPhiJGjlabiU'
+Google_Recaptcha_API_KEY=6LdOkjYqAAAAAL3WyeLXRWyMEgAnfPhiJGjlabiU
