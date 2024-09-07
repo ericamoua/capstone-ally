@@ -5,6 +5,7 @@ import Logo from '../assets/logo-2.png'
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuToggle, setMenuToggle] = useState(false);
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,7 +17,7 @@ function Navbar() {
   }
 
   return (
-    <>
+    <header>
       <nav id="navbar" className="">
         <div className="nav-wrapper">
           <div className="logo">
@@ -45,7 +46,7 @@ function Navbar() {
           </ul>
         </div>
       )}
-    </>
+    </header>
   );
 }
 
