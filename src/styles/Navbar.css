@@ -266,49 +266,6 @@
 /*======================================================
                    Responsive Mobile Menu 
   ======================================================*/
-<<<<<<< HEAD
-.overlay-menu {
-  background: lightblue;
-  color: rgb(13, 26, 38);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 15px;
-  transform: translateX(-100%);
-  width: 100vw;
-  height: 100vh;
-  -webkit-transition: transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-}
-
-.overlay-menu ul, .overlay-menu li{
-  display: block;
-}
-
-.overlay-menu li a {
-  display: block;
-  font-size: 1.8em;
-  letter-spacing: 4px;
-/*   opacity: 0; */
-  padding: 10px 0;
-  text-align: right;
-  text-transform: uppercase;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-/*   -webkit-transition: 0.2s opacity 0.2s ease-out;
-  transition: 0.2s opacity 0.2s ease-out; */
-}
-
-.overlay-menu li a:hover,
-.overlay-menu li a:active {
-  color: rgb(28, 121, 184);
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
-=======
   .overlay-menu {
     background: rgba(0, 0, 0, 0.8);
     display: block;
@@ -332,4 +289,3 @@
     margin-right: 3%;
     color: white; /* Normal color */
   }
->>>>>>> 21d6498cf8eed03729a7b70f8b46631bcb384841
