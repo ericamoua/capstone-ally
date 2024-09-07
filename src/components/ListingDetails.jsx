@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import detailsCSS from '../styles/listingdetails.module.css';
-import Slider from 'react-slick'; 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+
 
 const ListingDetails = () => {
   const { id } = useParams(); // Extract the listing ID from the URL
@@ -80,31 +78,12 @@ const ListingDetails = () => {
     return <p>Loading...</p>;
   }
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true, // Enable auto-play
-    autoplaySpeed: 3000, // 3 seconds interval between slides
-  };
+
 
   // Safely access all the fields in the `listing` object
   return (
     <div className={detailsCSS.listingDetails}>
-        {/* Check if there are photos available */}
-        {listing.photos && listing.photos.length > 0 ? (
-        <Slider {...sliderSettings}>
-          {listing.photos.map((photo, index) => (
-            <div key={index}>
-              <img  className={detailsCSS.listingImage} src={photo.href} alt={`Property ${index + 1}`}  />
-            </div>
-          ))}
-        </Slider>
-      ) : (
-        <p>No photo available</p>
-      )}
+        
     
     <div className={detailsCSS["primary-info"]}>
         <p>{listing.location.address.line || 'No address available'}</p>
