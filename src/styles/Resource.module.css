@@ -28,11 +28,10 @@
 .contactText {
   position: relative;
   z-index: 1;
-  font-size: 3em; /* Increase font size */
-  font-weight: bold;
+  font-size: 3em; 
   background: rgba(0, 0, 0, 0.5);
-  padding: 20px 40px; /* Add padding to make the background bigger */
-  border-radius: 8px; /* Optional: Add rounded corners */
+  padding: 20px 40px; 
+  border-radius: 8px; 
 }
 
 
