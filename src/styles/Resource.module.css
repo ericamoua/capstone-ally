@@ -28,10 +28,13 @@
 .contactText {
   position: relative;
   z-index: 1;
-  font-size: 2em;
+  font-size: 3em; /* Increase font size */
   font-weight: bold;
   background: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px; /* Add padding to make the background bigger */
+  border-radius: 8px; /* Optional: Add rounded corners */
 }
+
 
 /* Form Container */
 .container {
@@ -96,9 +99,11 @@
   font-size: 0.875em;
 }
 
-/* ReCAPTCHA */
-.GoogleReCaptchaProvider {
-  margin-bottom: 15px;
+
+.recaptchaContainer {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 20px; 
 }
 
 /* Submit Button */
@@ -168,7 +173,7 @@
   gap: 20px; 
   padding: 20px;
   flex-wrap: wrap; 
-  font-family:'Quicksand', sans-serif;
+  font-family:' Quicksand', sans-serif;
 }
 
 .card {

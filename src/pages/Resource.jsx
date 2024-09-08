@@ -152,11 +152,12 @@ const Resource = () => {
               />
               {errors.comment && <div className={styles.errorMessage}>{errors.subject}</div>}
             </div>
-
+          <div className={styles.recaptchaContainer}>
             <GoogleReCaptcha
               sitekey={Google_Recaptcha_API_KEY}
               onChange={onChange}
             />
+            </div>
             {captchaIsDone ? (
               <button className={styles.submitButton}>
                 Submit

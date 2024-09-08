@@ -35,8 +35,11 @@
 
 /* Definition Content */
 .definitionContent {
-  padding-left: 80px;
+  padding: 80px;
   font-family: 'Quicksand', sans-serif;
+  max-width: 800px; 
+  margin: 0 auto;   
+  text-align: center; 
 }
 
 .definitionSection {
@@ -47,4 +50,5 @@
   display: block;
   font-size: 1.5em;
   margin-bottom: 5px;
+  font-family: 'bree-serif'; 
 }
