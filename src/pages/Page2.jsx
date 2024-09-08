@@ -35,6 +35,7 @@ const Page2 = () => {
 
     <h2>Working with a Real Estate Agent</h2>
     <p>When buying or selling property in the U.S. as a non-citizen, it's crucial to work with a trustworthy real estate agent who understands your unique situation. A good agent will guide you through the process without pressuring you into decisions that don't align with your comfort level or goals.</p>
+    <p>The information provided in this article was sourced from Redfin.com</p>
 </div>
 </div>
     );
