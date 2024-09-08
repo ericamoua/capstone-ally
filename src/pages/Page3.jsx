@@ -65,7 +65,13 @@ const Page3 = () => {
                 </li>
                 <li><strong>Can you provide references from your last five transactions?</strong> 
                     <p>Instead of letting the agent choose their best references, ask for the most recent ones to get a balanced view of their service. Review these deals to see if the agent consistently negotiated favorable terms.</p>
-                    <p>The information provided in this article was sourced from Redfin.com</p>
+                    <p className={styles.definitionSection}>
+                    The information provided in this article was sourced from{' '}
+                 <a href="https://www.redfin.com" target="_blank" rel="noopener noreferrer">
+                     Redfin.com
+                 </a>
+                </p>
+
                 </li>
             </ol>
         </div>

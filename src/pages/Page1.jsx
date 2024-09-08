@@ -45,8 +45,13 @@ const Page1 = () => {
           <strong>What is a backup offer?</strong>
           A backup offer is an offer made by another buyer after the seller has already accepted an initial offer. Sellers may entertain backup offers if they believe the current deal could fall through. If you’re interested in a home that’s under contract, it’s wise to contact a Redfin real estate agent immediately to explore your options for submitting an offer.
         </p>
-        <p className={styles.definitionSection}> The information provided in this article was sourced from Redfin.com </p>
-          
+        <p className={styles.definitionSection}>
+        The information provided in this article was sourced from{' '}
+      <a href="https://www.redfin.com" target="_blank" rel="noopener noreferrer">
+    Redfin.com
+  </a>
+</p>
+
       </div>
     </div>
   );
