@@ -4,6 +4,8 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 const MapComponent = ({ listings }) => {
   const mapRef = useRef(null);
 
+  const libraries = ["places"];
+
   const defaultCenter = {
     lat: 35.2271, // Latitude for Charlotte, NC
     lng: -80.8431, // Longitude for Charlotte, NC
@@ -36,7 +38,7 @@ const MapComponent = ({ listings }) => {
       <div style={{ flex: 1 }}>
         <LoadScript
           googleMapsApiKey="AIzaSyAiSWL9qbLGSkPi-r_o81IG-CrLzvRA77k"
-          libraries={["places"]}
+          libraries={libraries}
           loadingElement={<div>Loading...</div>}
           id="google-map-script"
           async

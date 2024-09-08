@@ -4,7 +4,7 @@ import searchCSS from '../styles/listingsearch.module.css';
 import MapComponent from './MapComponent';
 
 const ListingSearch = () => {
-  const [zipcode, setZipcode] = useState('28202');
+  const [zipcode, setZipcode] = useState('Charlotte, NC');
   const [propertyType, setPropertyType] = useState('all');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
@@ -19,14 +19,12 @@ const ListingSearch = () => {
   const [sortOrder, setSortOrder] = useState('asc');
 
   const handleSearch = async (e) => {
-    e.preventDefault(); // Prevent page reload on form submission
-
-    const apiKey = '1c0f657840mshbdc692a2177d434p126a30jsn2297cf528c83'; 
-    let path = `/v2/for-sale-by-zipcode?zipcode=${zipcode}&offset=0&limit=42`;
-
-    if (propertyType && propertyType !== 'all') {
-      path += `&property_type=${propertyType}`;
-    }
+    e.preventDefault();
+  
+    const apiKey = '1c0f657840mshbdc692a2177d434p126a30jsn2297cf528c83';
+    let path = `/for-sale?location=${zipcode}&offset=0&limit=50&sort=relevance&days_on=1&expand_search_radius=1`;
+  
+    // Append query parameters for filtering
     if (minPrice) {
       path += `&price_min=${minPrice}`;
     }
@@ -45,26 +43,34 @@ const ListingSearch = () => {
     if (maxBathrooms) {
       path += `&baths_max=${maxBathrooms}`;
     }
-
+  
     try {
-      const response = await fetch(`https://us-real-estate.p.rapidapi.com${path}`, {
+      const response = await fetch(`https://us-real-estate-listings.p.rapidapi.com${path}`, {
         method: 'GET',
         headers: {
           'x-rapidapi-key': apiKey,
-          'x-rapidapi-host': 'us-real-estate.p.rapidapi.com',
+          'x-rapidapi-host': 'us-real-estate-listings.p.rapidapi.com',
         },
       });
-
+  
       if (!response.ok) {
         throw new Error('Failed to fetch listings');
       }
-
+  
       const data = await response.json();
-      setListings(data.data.home_search.results);
+      console.log(data);
+  
+      if (data && Array.isArray(data.listings)) {
+        setListings(data.listings); // Correctly set the listings state
+      } else {
+        setListings([]);
+        setError('No listings found or unexpected response structure');
+      }
     } catch (error) {
       setError(error.message);
     }
   };
+  
 
   useEffect(() => {
     // Optionally fetch some initial data or handle side effects
@@ -101,14 +107,14 @@ const ListingSearch = () => {
 
   return (
     <div className={searchCSS['listing-search']}>
-      <h4 className={searchCSS['listing-title']}>Search Listings</h4>
+      <h3 className={searchCSS['listing-title']}>Search Listings</h3>
 
       <form className={searchCSS['search-form']} onSubmit={handleSearch}>
         <div className={searchCSS['top-group']}>
           <div className={`${searchCSS['form-cont']} ${searchCSS.zipcode}`}>
             <input
               type="text"
-              placeholder="Zipcode"
+              placeholder="Location"
               value={zipcode}
               onChange={(e) => setZipcode(e.target.value)}
             />
@@ -197,6 +203,7 @@ const ListingSearch = () => {
         </div>
       </form>
 
+      {/* Integrating the MapComponent */}
       <MapComponent listings={sortedListings} />
 
       <div>
@@ -209,7 +216,7 @@ const ListingSearch = () => {
                   {listing.primary_photo && (
                     <img
                       className={searchCSS.listingImage}
-                      src={listing.primary_photo.href}
+                      src={listing.photos[0].href}
                       alt="Property"
                     />
                   )}
@@ -239,13 +246,12 @@ const ListingSearch = () => {
             ))}
           </div>
         ) : (
-          <p>No listings found</p>
+          <p>{error ? error : 'No listings found'}</p>
         )}
       </div>
-
-      {error && <p className={searchCSS.error}>{error}</p>}
     </div>
   );
 };
 
 export default ListingSearch;
+
