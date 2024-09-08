@@ -26,7 +26,7 @@ function App() {
        <Route path="/resource" element={<Contact/>}/>
        <Route path="/search" element={<FindHome/>}/>
       <Route path="/listing/:id" element={<ListingDetails />} />
-       <Route path="/google" element={<GoogleSignIn/>} />
+       <Route path="/google" element={<GoogleCallback/>} />
        <Route path="/auth/google/callback" element={<GoogleCallback/>} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/*" element={<Error />} />
