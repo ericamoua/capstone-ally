@@ -70,7 +70,7 @@ function UserList() {
                 <div key={user.id} className={styles.userItem}>
                     <p>{user.email}</p>
                     <button onClick={() => handleSelectUser(user)}>Edit</button>
-                    <button onClick={() => handleDeleteUser(user.id)}>Delete</button>
+                    <button onClick={() => handleDeleteUser(user.id)} style={{ color: 'red' }}>Delete</button>
                 </div>
             ))}
 
