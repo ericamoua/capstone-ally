@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/GoogleSignIn.module.css'; // Import your CSS module
+import styles from '../styles/GoogleSignIn.module.css'; 
 
 const GoogleSignIn = () => {
   return (
