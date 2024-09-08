@@ -3,12 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import logInCss from '../styles/Login.module.css';
 import { SocialIcon } from 'react-social-icons';
 
-
 function Login() {
     const [username, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [loggedIn, setLoggedIn] = useState(false); // Add state to track login status
+    const [loggedIn, setLoggedIn] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -39,7 +38,6 @@ function Login() {
                 const data = await response.json();
                 console.log(data);
 
-                // Set login status and redirect based on user role
                 setLoggedIn(true);
                 if (data.isAdmin) {
                     navigate('/admin');
@@ -65,7 +63,6 @@ function Login() {
                 const data = await response.json();
                 console.log(data.message);
 
-               //check if user is logged in
                 setLoggedIn(false);
                 navigate('/login');
             } else {
@@ -77,13 +74,17 @@ function Login() {
         }
     };
 
+    const handleGoogleSignIn = () => {
+        window.location.href = 'https://ecommercev2-ytjg.onrender.com/auth/google';
+    };
+
     return (
         <div className={logInCss.formBody}>
             <div className={logInCss.formContainer}>
                 
                 <form className={logInCss.form} onSubmit={handleSubmit}>
-                <h1>Login</h1>
-                  
+                    <h1>Login</h1>
+                    
                     <div className={logInCss.logInContainer}>
                         {error && <p style={{ color: 'red' }}>{error}</p>}
                         <input
@@ -108,12 +109,10 @@ function Login() {
                                 <p>Don't have an account?</p>
                                 <Link to="/register">Sign up</Link>
                                 <h5>OR</h5>
-                                <Link to="/google">
-                                    <button className={logInCss.googleBtn}>
-                                        <SocialIcon url="https://www.google.com/" style={{ margin: ".5rem" }} />
-                                        Continue with Google
-                                    </button>
-                                </Link>
+                                <button className={logInCss.googleBtn} onClick={handleGoogleSignIn}>
+                                    <SocialIcon url="https://www.google.com/" style={{ margin: ".5rem" }} />
+                                    Continue with Google
+                                </button>
                             </div>
                         </div>
                     </div>

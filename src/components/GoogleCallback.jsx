@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const GoogleCallback = () => {
-    const navigate = useNavigate(); // Corrected from history to navigate
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchUser = async () => {
