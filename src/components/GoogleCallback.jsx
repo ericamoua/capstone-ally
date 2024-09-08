@@ -15,7 +15,7 @@ const GoogleCallback = () => {
                 if (response.ok) {
                     const data = await response.json();
                     console.log('User data:', data);
-                    navigate('/dashboard'); 
+                    navigate('/'); 
                 } else {
                     throw new Error('Authentication failed');
                 }
