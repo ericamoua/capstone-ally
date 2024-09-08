@@ -2,10 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const GoogleLognIn = () => {
-    const history = useNavigate();
+    const navigate = useNavigate(); 
 
     const handleSignIn = () => {
-        
         window.location.href = 'https://ecommercev2-ytjg.onrender.com/auth/google';
     };
 

@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const GoogleCallback = () => {
-    const history = useNavigate();
+    const navigate = useNavigate(); // Corrected from history to navigate
 
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                // Make a request to your backend to check if the user is authenticated
                 const response = await fetch('https://ecommercev2-ytjg.onrender.com/auth/login/success', {
                     method: 'GET',
                     credentials: 'include' 
@@ -16,19 +15,18 @@ const GoogleCallback = () => {
                 if (response.ok) {
                     const data = await response.json();
                     console.log('User data:', data);
-                   
-                    history.push('/dashboard'); 
+                    navigate('/dashboard'); 
                 } else {
                     throw new Error('Authentication failed');
                 }
             } catch (error) {
                 console.error('Authentication failed:', error);
-                history.push('/login');
+                navigate('/login'); 
             }
         };
 
         fetchUser();
-    }, [history]);
+    }, [navigate]);
 
     return <div>Loading...</div>;
 };
