@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import '../styles/Navbar.css';
 import Logo from '../assets/logo-2.png';
-import { handleLogout } from './Logout'; 
+import { handleLogout } from './Logout';
 
 function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-// fecth request to backend to check if user is logged in
+
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -14,8 +14,13 @@ function Navbar() {
           method: 'GET',
           credentials: 'include'
         });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok.');
+        }
+
         const data = await response.json();
-        setIsLoggedIn(data.loggedIn); 
+        setIsLoggedIn(data.loggedIn);
       } catch (error) {
         console.error('Authentication check failed:', error);
       }
