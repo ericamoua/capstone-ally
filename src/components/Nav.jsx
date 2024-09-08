@@ -1,13 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/Navbar.css';
-import Logo from '../assets/logo-2.png'
-
+import Logo from '../assets/logo-2.png';
+import { handleLogout } from './Logout'; 
 
 function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+// fecth request to backend to check if user is logged in
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch('https://ecommercev2-ytjg.onrender.com/check-auth', {
+          method: 'GET',
+          credentials: 'include'
+        });
+        const data = await response.json();
+        setIsLoggedIn(data.loggedIn); 
+      } catch (error) {
+        console.error('Authentication check failed:', error);
+      }
+    };
+
+    checkAuth();
+  }, []);
 
   const handleMenuToggle = () => {
-    console.log(menuToggle);
     setMenuToggle(!menuToggle);
   }
 
@@ -22,7 +39,11 @@ function Navbar() {
             <li><a href="/">Home</a></li>
             <li><a href="/search">Find Your Home</a></li>
             <li><a href="/resource">Contact</a></li>
-            <li><a href="/login">Login</a></li>
+            {isLoggedIn ? (
+              <li><a href="#" onClick={handleLogout}>Log out</a></li>
+            ) : (
+              <li><a href="/login">Login</a></li>
+            )}
           </ul>
         </div>
       </nav>
@@ -37,7 +58,11 @@ function Navbar() {
             <li><a href="/">Home</a></li>
             <li><a href="/search">Find Your Home</a></li>
             <li><a href="/resource">Contact</a></li>
-            <li><a href="/login">Login</a></li>
+            {isLoggedIn ? (
+              <li><a href="#" onClick={handleLogout}>Log out</a></li>
+            ) : (
+              <li><a href="/login">Login</a></li>
+            )}
           </ul>
         </div>
       )}
@@ -45,4 +70,4 @@ function Navbar() {
   );
 }
 
-export default Navbar; 
+export default Navbar;
