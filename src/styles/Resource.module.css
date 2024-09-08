@@ -22,6 +22,7 @@
   align-items: center;
   color: white;
   position: relative;
+  margin-top: -20px;
 }
 
 .contactText {
@@ -29,6 +30,7 @@
   z-index: 1;
   font-size: 2em;
   font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* Form Container */
@@ -43,7 +45,7 @@
 
 
 .headers {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'bree-serif';
 }
 
 /* Text styles for different elements */
@@ -148,7 +150,7 @@
 }
 
 .heroHeading {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'bree-serif';
   font-size: 2.5em;
   margin-bottom: 20px;
 }
@@ -166,6 +168,7 @@
   gap: 20px; 
   padding: 20px;
   flex-wrap: wrap; 
+  font-family:'Quicksand', sans-serif;
 }
 
 .card {
@@ -176,6 +179,8 @@
   width: 30%; 
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 300px;
+  max-height: 400px;
 }
 
 .card:hover {

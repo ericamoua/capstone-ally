@@ -1,6 +1,6 @@
 /* Overall Page Container */
 .pageContainer {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'bree-serif';
   margin: 0;
   padding: 0;
 }
@@ -35,7 +35,8 @@
 
 /* Definition Content */
 .definitionContent {
-  padding: 20px;
+  padding-left: 80px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .definitionSection {
