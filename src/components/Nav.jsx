@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
 import Logo from '../assets/logo-2.png';
-import { handleLogout } from './Logout';
+import { handleLogout } from './Logout'; 
 
 function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -14,13 +16,18 @@ function Navbar() {
           method: 'GET',
           credentials: 'include'
         });
-        const data = await response.json();
-        setIsLoggedIn(data.loggedIn); 
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Auth Check Response:', data); g
+          setIsLoggedIn(data.loggedIn); 
+        } else {
+          console.error('Failed to check authentication status.');
+        }
       } catch (error) {
         console.error('Authentication check failed:', error);
       }
     };
-    
 
     checkAuth();
   }, []);
@@ -29,19 +36,30 @@ function Navbar() {
     setMenuToggle(!menuToggle);
   }
 
+  const handleLogoutClick = async (e) => {
+    e.preventDefault(); 
+    console.log('Handling logout...');
+
+    try {
+      await handleLogout(navigate, setIsLoggedIn);
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
+
   return (
     <>
-      <nav id="navbar" className="">
+      <nav id="navbar">
         <div className="nav-wrapper">
           <div className="logo">
-            <a href="/"> <img src={Logo} className="logoImg"/> </a>
+            <a href="/"> <img src={Logo} className="logoImg" alt="Logo"/> </a>
           </div>
           <ul id="menu">
             <li><a href="/">Home</a></li>
             <li><a href="/search">Find Your Home</a></li>
             <li><a href="/resource">Contact</a></li>
             {isLoggedIn ? (
-              <li><a href="#" onClick={handleLogout}>Log out</a></li>
+              <li><a href="#" onClick={handleLogoutClick}>Log out</a></li>
             ) : (
               <li><a href="/login">Login</a></li>
             )}
@@ -60,7 +78,7 @@ function Navbar() {
             <li><a href="/search">Find Your Home</a></li>
             <li><a href="/resource">Contact</a></li>
             {isLoggedIn ? (
-              <li><a href="#" onClick={handleLogout}>Log out</a></li>
+              <li><a href="#" onClick={handleLogoutClick}>Log out</a></li>
             ) : (
               <li><a href="/login">Login</a></li>
             )}
