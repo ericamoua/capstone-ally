@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
 import Logo from '../assets/logo-2.png';
 import { handleLogout } from './Logout'; 
@@ -19,7 +19,7 @@ function Navbar() {
 
         if (response.ok) {
           const data = await response.json();
-          console.log('Auth Check Response:', data); g
+          console.log('Auth Check Response:', data);
           setIsLoggedIn(data.loggedIn); 
         } else {
           console.error('Failed to check authentication status.');
@@ -52,13 +52,17 @@ function Navbar() {
       <nav id="navbar">
         <div className="nav-wrapper">
           <div className="logo">
-            <a href="/"> <img src={Logo} className="logoImg" alt="Logo"/> </a>
+            <Link to="/"> <img src={Logo} className="logoImg" alt="Logo"/> </Link>
           </div>
           <ul id="menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/search">Find Your Home</a></li>
-            <li><a href="/resource">Contact And Resources</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/search">Find Your Home</Link></li>
+            <li><Link to="/resource">Contact And Resources</Link></li>
+            {isLoggedIn ? (
+              <li><Link to="#" onClick={handleLogoutClick}>Log out</Link></li>
+            ) : (
+              <li><Link to="/login">Login</Link></li>
+            )}
           </ul>
         </div>
       </nav>
@@ -70,13 +74,13 @@ function Navbar() {
       {menuToggle && (
         <div className="overlay-menu">
           <ul id="menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/search">Find Your Home</a></li>
-            <li><a href="/resource">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/search">Find Your Home</Link></li>
+            <li><Link to="/resource">Contact And Resources</Link></li>
             {isLoggedIn ? (
-              <li><a href="#" onClick={handleLogoutClick}>Log out</a></li>
+              <li><Link to="#" onClick={handleLogoutClick}>Log out</Link></li>
             ) : (
-              <li><a href="/login">Login</a></li>
+              <li><Link to="/login">Login</Link></li>
             )}
           </ul>
         </div>
@@ -84,4 +88,5 @@ function Navbar() {
     </>
   );
 }
+
 export default Navbar;
