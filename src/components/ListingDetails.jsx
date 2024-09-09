@@ -48,7 +48,7 @@ const ListingDetails = () => {
   const { location, description, schools, local } = listing;
 
   console.log('Schools data:', schools); // Check if this logs the schools data correctly
-
+  console.log('Length of array:', schools.length); // Check if this logs the first school name correctly
   return (
     <div className={detailsCSS.listingDetails}>
       <ImageSlider propertyId={listing.property_id} />
@@ -85,11 +85,11 @@ const ListingDetails = () => {
     
       <div className={detailsCSS['extra-info']}>
         {/* Schools Section */}
-        <div className={detailsCSS["schools"]}>
+        <div className={detailsCSS["school-div"]}>
           <h3><FaSchool /> Nearby Schools</h3>
-          { schools.length > 0 ? (
+          { schools.schools.length > 0 ? (
             <ul>
-              {schools.map((school) => (
+              {schools.schools.map((school) => (
                 <li key={school.id}>
                   <strong>{school.name}</strong><br />
                   Distance: {school.distance_in_miles} miles<br />
