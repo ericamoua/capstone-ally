@@ -5,12 +5,16 @@ import ImageSlider from './ImageSlider';
 import { FaHouseFloodWater } from "react-icons/fa6";
 import { FaVolumeUp } from "react-icons/fa";
 import { FaSchool } from "react-icons/fa";
+import { FaMapPin } from "react-icons/fa";
 
 const ListingDetails = () => {
+  // Use useParams to get the listing ID from the URL
   const { id } = useParams();
+  // Initialize state variables for listing details and error handling
   const [listing, setListing] = useState(null);
   const [error, setError] = useState(null);
 
+  // Fetch listing details from the API
   useEffect(() => {
     const fetchListingDetails = async () => {
       try {
@@ -27,8 +31,9 @@ const ListingDetails = () => {
         }
 
         const data = await response.json();
+        // Log the data to the console for debugging purposes
         console.log('Listing data:', data);
-        setListing(data.data);  // Adjusted to set the inner `data` object
+        setListing(data.data);  
       } catch (error) {
         setError(error.message);
       }
@@ -47,10 +52,13 @@ const ListingDetails = () => {
 
   const { location, description, schools, local } = listing;
 
-  console.log('Schools data:', schools); // Check if this logs the schools data correctly
-  console.log('Length of array:', schools.length); // Check if this logs the first school name correctly
+  // Log the schools data to the console for debugging purposes
+  console.log('Schools data:', schools); 
+
+  // Render the listing details
   return (
     <div className={detailsCSS.listingDetails}>
+      {/* Render the image slider */}
       <ImageSlider propertyId={listing.property_id} />
       <div className={detailsCSS["primary-info"]}>
         <p>{location?.address?.line || 'No address available'}</p>
@@ -87,8 +95,10 @@ const ListingDetails = () => {
         {/* Schools Section */}
         <div className={detailsCSS["school-div"]}>
           <h3><FaSchool /> Nearby Schools</h3>
+          {/* Verify that there are schools */}
           { schools.schools.length > 0 ? (
             <ul>
+              {/*Map through each school and display its information*/}
               {schools.schools.map((school) => (
                 <li key={school.id}>
                   <strong>{school.name}</strong><br />
@@ -108,7 +118,7 @@ const ListingDetails = () => {
 
         {/* Local Info Section */}
         <div className={detailsCSS["local-info"]}>
-          <h3>Local Information</h3>
+          <h3><FaMapPin /> Local Information</h3>
           {local?.flood ? (
             <div>
               <h5><FaHouseFloodWater /> Flood Information</h5>
