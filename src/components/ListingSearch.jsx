@@ -4,6 +4,7 @@ import searchCSS from '../styles/listingsearch.module.css';
 import MapComponent from './MapComponent';
 
 const ListingSearch = () => {
+  // Initialize state variables for search parameters, listings and sorting
   const [zipcode, setZipcode] = useState('Charlotte, NC');
   const [propertyType, setPropertyType] = useState('all');
   const [minPrice, setMinPrice] = useState('');
@@ -14,17 +15,18 @@ const ListingSearch = () => {
   const [maxBathrooms, setMaxBathrooms] = useState('');
   const [listings, setListings] = useState([]);
   const [error, setError] = useState(null);
-
   const [sortField, setSortField] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
 
+  // Handle search form submission
   const handleSearch = async (e) => {
     e.preventDefault();
-  
+
+    // ApiKey and path for listing search
     const apiKey = '1c0f657840mshbdc692a2177d434p126a30jsn2297cf528c83';
     let path = `/for-sale?location=${zipcode}&offset=0&limit=50&sort=relevance&days_on=1&expand_search_radius=1`;
-  
-    // Append query parameters for filtering
+
+    // Add search parameters to path if they are present
     if (minPrice) {
       path += `&price_min=${minPrice}`;
     }
@@ -43,7 +45,8 @@ const ListingSearch = () => {
     if (maxBathrooms) {
       path += `&baths_max=${maxBathrooms}`;
     }
-  
+
+    // Fetch listings
     try {
       const response = await fetch(`https://us-real-estate-listings.p.rapidapi.com${path}`, {
         method: 'GET',
@@ -52,16 +55,19 @@ const ListingSearch = () => {
           'x-rapidapi-host': 'us-real-estate-listings.p.rapidapi.com',
         },
       });
-  
+
+      // Handle errors
       if (!response.ok) {
         throw new Error('Failed to fetch listings');
       }
-  
+
+      // Handle successful response and log response to console for debugging
       const data = await response.json();
       console.log(data);
-  
+
+      // Ensures the response structure is as expected and returns an error if data is not in the expected format 
       if (data && Array.isArray(data.listings)) {
-        setListings(data.listings); // Correctly set the listings state
+        setListings(data.listings); 
       } else {
         setListings([]);
         setError('No listings found or unexpected response structure');
@@ -70,12 +76,8 @@ const ListingSearch = () => {
       setError(error.message);
     }
   };
-  
 
-  useEffect(() => {
-    // Optionally fetch some initial data or handle side effects
-  }, []);
-
+  // Sort listings based on sort field and order
   const sortedListings = useMemo(() => {
     if (!sortField) return listings;
 
@@ -106,6 +108,7 @@ const ListingSearch = () => {
   }, [listings, sortField, sortOrder]);
 
   return (
+    // Display search form
     <div className={searchCSS['listing-search']}>
       <h3 className={searchCSS['listing-title']}>Search Listings</h3>
 
@@ -203,10 +206,12 @@ const ListingSearch = () => {
         </div>
       </form>
 
-      {/* Integrating the MapComponent */}
+      {/* Google Map Component */}
       <MapComponent listings={sortedListings} />
 
       <div>
+        {/* Display search results */}
+        {/* Verify that there are results*/}
         {sortedListings.length > 0 ? (
           <div className={searchCSS['info-box']}>
             {sortedListings.map((listing, index) => (
@@ -239,6 +244,7 @@ const ListingSearch = () => {
                     <li>{listing.description.sqft} Square Feet</li>
                   </ul>
                 </div>
+                {/* Takes user to more details */}
                 <Link className={searchCSS['more-details']} to={`/listing/${listing.property_id}`}>
                   More Details
                 </Link>
