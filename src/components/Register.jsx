@@ -12,7 +12,7 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+//validate if  username and password are empty, also uses regex
     if (username === '' || password === '') {
       setError('Both fields are required.');
       return;
@@ -24,7 +24,7 @@ function Register() {
     }
 
     setError('');
-
+// request to register route
     try {
       const response = await fetch('https://ecommercev2-ytjg.onrender.com/api/signup', {
         method: 'POST',

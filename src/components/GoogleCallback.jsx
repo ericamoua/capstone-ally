@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const GoogleCallback = () => {
     const navigate = useNavigate();
-
+// fetch request to check if user is authenticated
     useEffect(() => {
         const fetchUser = async () => {
             try {
