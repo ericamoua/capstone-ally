@@ -85,7 +85,7 @@ function Register() {
             />
             Admin
           </label>
-          <button type="submit" className={registerCss.submitBtn}>Register</button>
+          <button type="submit" className={registerCss.submitBtnR}>Register</button>
         </form>
       </div>
     </div>
