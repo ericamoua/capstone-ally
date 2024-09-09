@@ -87,7 +87,7 @@ const Resource = () => {
     });
 
     if (response.ok) {
-      console.log('Form data submitted successfully');
+window.alert('Form submitted successfully');
     } else {
       console.error('Error submitting form data');
     }
