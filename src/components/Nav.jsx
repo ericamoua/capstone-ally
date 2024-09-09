@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
-import Logo from '../assets/logo-2.png';
-import { handleLogout } from './Logout'; 
+import Logo from '../assets/logo-2.png'
+
 
 function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -33,23 +33,13 @@ function Navbar() {
   }, []);
 
   const handleMenuToggle = () => {
+    console.log(menuToggle);
     setMenuToggle(!menuToggle);
   }
 
-  const handleLogoutClick = async (e) => {
-    e.preventDefault(); 
-    console.log('Handling logout...');
-
-    try {
-      await handleLogout(navigate, setIsLoggedIn);
-    } catch (error) {
-      console.error('Logout failed:', error);
-    }
-  };
-
   return (
     <>
-      <nav id="navbar">
+      <nav id="navbar" className="">
         <div className="nav-wrapper">
           <div className="logo">
             <Link to="/"> <img src={Logo} className="logoImg" alt="Logo"/> </Link>
@@ -89,4 +79,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar; 
