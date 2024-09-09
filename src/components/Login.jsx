@@ -12,19 +12,19 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+//checl if username and password are empty
         if (username === '' || password === '') {
             setError('Both fields are required.');
             return;
         }
-
+//regex for email validation
         if (!/\S+@\S+\.\S+/.test(username)) {
             setError('Please enter a valid email address.');
             return;
         }
 
         setError('');
-
+// fecth request to login route
         try {
             const response = await fetch('https://ecommercev2-ytjg.onrender.com/api/login', {
                 method: 'POST',
@@ -33,7 +33,7 @@ function Login() {
                 },
                 body: JSON.stringify({ username, password }),
             });
-
+// check if response is valid
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
@@ -53,7 +53,7 @@ function Login() {
         }
     };
 
- 
+ // redirect to google log in route
     const handleGoogleSignIn = () => {
         window.location.href = 'https://ecommercev2-ytjg.onrender.com/auth/google';
     };
@@ -88,11 +88,7 @@ function Login() {
                             <div className={logInCss.signUpContainer}>
                                 <p>Don't have an account?</p>
                                 <Link to="/register">Sign Up</Link>
-                                {/* <h5>OR</h5>
-                                <button className={logInCss.googleBtn} onClick={handleGoogleSignIn}>
-                                    <SocialIcon url="https://www.google.com/" style={{ margin: ".5rem" }} />
-                                    Continue with Google
-                                </button> */}
+                            
                             </div>
                         </div>
                     </div>

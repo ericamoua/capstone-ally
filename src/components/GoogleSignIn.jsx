@@ -1,5 +1,5 @@
 import React from 'react';
-
+// redirect to server for google auth
 const GoogleLognIn = () => {
     const handleSignIn = () => {
         window.location.href = 'https://ecommercev2-ytjg.onrender.com/auth/google';
