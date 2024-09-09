@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ListingSearch from '../components/ListingSearch';
+import SearchHero from '../components/SearchHero';
 
 
 const HouseSearch = () => {
@@ -11,6 +12,7 @@ const HouseSearch = () => {
 
   return (
     <div>
+      <SearchHero />
       <ListingSearch onSubmit={handleSearchResults} />
 
     </div>

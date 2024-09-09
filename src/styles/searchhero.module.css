@@ -1,0 +1,29 @@
+.searchHero {
+    background-image: url('../assets/skyline.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.heroText {
+    background: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;;
+    text-align: center;
+}
+
+.heroText h1 {
+    font-size: 2.75rem;
+}
+
+.heroText p {
+    font-size: 1.50rem;
+}

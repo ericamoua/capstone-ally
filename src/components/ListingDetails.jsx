@@ -4,6 +4,7 @@ import detailsCSS from '../styles/listingdetails.module.css';
 import ImageSlider from './ImageSlider';
 import { FaHouseFloodWater } from "react-icons/fa6";
 import { FaVolumeUp } from "react-icons/fa";
+import { FaSchool } from "react-icons/fa";
 
 const ListingDetails = () => {
   const { id } = useParams();
@@ -85,7 +86,7 @@ const ListingDetails = () => {
       <div className={detailsCSS['extra-info']}>
         {/* Schools Section */}
         <div className={detailsCSS["schools"]}>
-          <h3>Nearby Schools</h3>
+          <h3><FaSchool /> Nearby Schools</h3>
           { schools.length > 0 ? (
             <ul>
               {schools.map((school) => (
