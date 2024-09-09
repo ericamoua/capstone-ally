@@ -88,11 +88,11 @@ function Login() {
                             <div className={logInCss.signUpContainer}>
                                 <p>Don't have an account?</p>
                                 <Link to="/register">Sign Up</Link>
-                                <h5>OR</h5>
+                                {/* <h5>OR</h5>
                                 <button className={logInCss.googleBtn} onClick={handleGoogleSignIn}>
                                     <SocialIcon url="https://www.google.com/" style={{ margin: ".5rem" }} />
                                     Continue with Google
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>
