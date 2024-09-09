@@ -77,14 +77,7 @@ function Register() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <label className={registerCss.checkboxLabel}>
-            <input
-              type="checkbox"
-              checked={isAdmin}
-              onChange={(e) => setIsAdmin(e.target.checked)}
-            />
-            Admin
-          </label>
+         
           <button type="submit" className={registerCss.submitBtn}>Register</button>
         </form>
       </div>
