@@ -79,6 +79,7 @@ function Register() {
           />
          
           <button type="submit" className={registerCss.submitBtn}>Register</button>
+       
         </form>
       </div>
     </div>
