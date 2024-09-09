@@ -10,21 +10,17 @@ function Navbar() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await fetch('https://ecommercev2-ytjg.onrender.com/check-auth', {
+        const response = await fetch('https://ecommercev2-ytjg.onrender.com/auth/check-auth', {
           method: 'GET',
           credentials: 'include'
         });
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok.');
-        }
-
         const data = await response.json();
-        setIsLoggedIn(data.loggedIn);
+        setIsLoggedIn(data.loggedIn); 
       } catch (error) {
         console.error('Authentication check failed:', error);
       }
     };
+    
 
     checkAuth();
   }, []);
