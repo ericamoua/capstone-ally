@@ -36,7 +36,12 @@
     font-family: "Bree Serif", serif;
     font-size: 1.2rem;
     margin: 5% auto;
+    text-align: center;
 
+  }
+
+  .secondary-info ul {
+    list-style-type: none;
   }
 
   .listing-description {
@@ -55,20 +60,18 @@
   }
 
   .school-div {
-   text-align: center;
+    margin: 5% auto;
+    text-align: center;
   }
 
-  .school-div ul {
-    list-style-type: none;
-
-  }
-
-
-  
-  .local-info ul {
-    list-style-type: none;
+  .local-info {
+    margin: 5% auto;
+    text-align: center;
   }
   
+  .extra-info ul {
+    list-style-type: none;
+  }
   
 
   @media (min-width: 768px) {
