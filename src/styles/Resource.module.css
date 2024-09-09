@@ -107,7 +107,7 @@
 
 /* Submit Button */
 .submitButton {
-  background-color: #0b5394;
+  background-color: #213744;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -116,6 +116,7 @@
   font-size: 1em;
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .buttonText {
