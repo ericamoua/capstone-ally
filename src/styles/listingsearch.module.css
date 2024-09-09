@@ -68,7 +68,7 @@
   }
   
   .search-btn {
-      background-color: #213744;
+      background-color: #0B5394;
       width: 35%;
       border: none;
       color: #fff;
@@ -202,4 +202,5 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
+
   }
