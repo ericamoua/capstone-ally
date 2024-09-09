@@ -53,27 +53,7 @@ function Login() {
         }
     };
 
-    const handleLogout = async () => {
-        try {
-            const response = await fetch('https://ecommercev2-ytjg.onrender.com/api/logout', {
-                method: 'GET',
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                console.log(data.message);
-
-                setLoggedIn(false);
-                navigate('/login');
-            } else {
-                const errorMessage = await response.json();
-                console.error(errorMessage.message || 'Logout failed.');
-            }
-        } catch (error) {
-            console.error('Logout error:', error);
-        }
-    };
-
+ 
     const handleGoogleSignIn = () => {
         window.location.href = 'https://ecommercev2-ytjg.onrender.com/auth/google';
     };
@@ -107,7 +87,7 @@ function Login() {
                             <button type="submit" className={logInCss.submitBtn}>Log In</button>
                             <div className={logInCss.signUpContainer}>
                                 <p>Don't have an account?</p>
-                                <Link to="/register">Sign up</Link>
+                                <Link to="/register">Sign Up</Link>
                                 <h5>OR</h5>
                                 <button className={logInCss.googleBtn} onClick={handleGoogleSignIn}>
                                     <SocialIcon url="https://www.google.com/" style={{ margin: ".5rem" }} />
@@ -117,11 +97,7 @@ function Login() {
                         </div>
                     </div>
                 </form>
-                {loggedIn && (
-                    <button onClick={handleLogout} className={logInCss.logoutBtn}>
-                        Log Out
-                    </button>
-                )}
+            
             </div>
         </div>
     );
