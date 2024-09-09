@@ -1,7 +1,7 @@
-Budget Nest
+## Budget Nest
 Budget Nest is a comprehensive full-stack application designed to guide users through the home-buying process. This application combines a user-friendly frontend with a robust backend to provide a seamless and efficient experience.
 
-Technology Stack
+## Technology Stack
 Frontend: Built with React and Vite
 Backend: Developed using Node.js
 Database: SQL, hosted on AWS RDS
