@@ -21,7 +21,7 @@ function Navbar() {
           <ul id="menu">
             <li><a href="/">Home</a></li>
             <li><a href="/search">Find Your Home</a></li>
-            <li><a href="/resource">Contact</a></li>
+            <li><a href="/resource">Contact And Resources</a></li>
             <li><a href="/login">Login</a></li>
           </ul>
         </div>
