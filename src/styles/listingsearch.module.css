@@ -1,8 +1,8 @@
 .listing-title {
-  font-family: "Bree Serif", serif;
+    font-family: "Bree Serif", serif;
     text-align: center;
     color:#4F5B66;
-    margin: 5% auto;
+    font-size: 2rem;
   }
   
   .listing-search {
@@ -11,6 +11,7 @@
       padding-bottom: 15px;
       width: 100%;
       margin: 0 auto;
+      margin-top: 5%;
   }
   
  .search-form {
@@ -110,8 +111,16 @@
   }
 
   .listingImage {
-    height: 200px;
-    width: 100%;
+    height: auto;
+    width: 75%;
+    image-resolution: from-image 300dpi;
+  }
+
+ .listing-details p {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.2rem;
+    color: #4F5B66;
+    margin: 3% auto;
   }
 
   .listing-price {

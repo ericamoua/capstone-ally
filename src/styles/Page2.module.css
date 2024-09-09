@@ -1,6 +1,6 @@
 /* Overall Page Container */
 .pageContainer {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'bree-serif';
   margin: 0;
   padding: 0;
 }
@@ -41,12 +41,13 @@
   text-align: center; 
   margin: 0 auto;
   max-width: 800px; 
-  padding: 20px; 
+  padding: 80px; 
 }
 
 
 /* Main Content */
 h2 {
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.8em;
   margin-top: 20px;
   border-bottom: 2px solid #ccc; 
@@ -54,6 +55,7 @@ h2 {
 }
 
 p {
+  font-family: 'Quicksand', sans-serif;
   font-size: 1em;
   line-height: 1.6;
   margin: 10px 0;
@@ -66,5 +68,6 @@ ul {
 }
 
 li {
+  font-family: 'Quicksand', sans-serif;
   margin-bottom: 10px;
 }

@@ -19,9 +19,11 @@ const Page1 = () => {
       </section>
 
       <div className={styles.definitionContent}>
-        <p className={styles.definitionSection}>
-          <strong>What does it mean when a house is ‘active under contract’?</strong>
-          When a home is labeled as "active under contract," it indicates that the seller has accepted an offer from a buyer, but the sale has not yet been finalized. Once all the required steps are completed, the status will change to show that the home has been sold.
+        <h1 className={styles.definitionSection}>
+          What does it mean when a house is ‘active under contract’? </h1>
+         <p>This status indicates that a buyer has made an offer on the home, and the seller has accepted it, but the sale has not yet been finalized. Once the transaction is complete, the home’s status will change to "sold."
+        <br></br>
+        While the property is under contract, all contingencies must be satisfied before the sale can be finalized. These may include the buyer securing financing, completing a home inspection to ensure there are no significant defects, or fulfilling other conditions outlined in the contract. If either the buyer or seller fails to meet these conditions, the contract may be breached, allowing one party to withdraw from the sale.
         </p>
 
         <p className={styles.definitionSection}>
@@ -43,6 +45,13 @@ const Page1 = () => {
           <strong>What is a backup offer?</strong>
           A backup offer is an offer made by another buyer after the seller has already accepted an initial offer. Sellers may entertain backup offers if they believe the current deal could fall through. If you’re interested in a home that’s under contract, it’s wise to contact a Redfin real estate agent immediately to explore your options for submitting an offer.
         </p>
+        <p className={styles.definitionSection}>
+        The information provided in this article was sourced from{' '}
+      <a href="https://www.redfin.com" target="_blank" rel="noopener noreferrer">
+    Redfin.com
+  </a>
+</p>
+
       </div>
     </div>
   );
