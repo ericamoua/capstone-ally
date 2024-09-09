@@ -19,6 +19,7 @@ function Navbar() {
 
         if (response.ok) {
           const data = await response.json();
+          console.log('Auth Check Response:', data); g
           setIsLoggedIn(data.loggedIn); 
         } else {
           console.error('Failed to check authentication status.');
@@ -36,7 +37,8 @@ function Navbar() {
   }
 
   const handleLogoutClick = async (e) => {
-    e.preventDefault(); // Prevent default link behavior
+    e.preventDefault(); 
+    console.log('Handling logout...');
 
     try {
       await handleLogout(navigate, setIsLoggedIn);
