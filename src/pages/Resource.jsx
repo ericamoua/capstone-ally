@@ -87,7 +87,7 @@ const Resource = () => {
     });
 
     if (response.ok) {
-window.alert('Form submitted successfully');
+      console.log('Form data submitted successfully');
     } else {
       console.error('Error submitting form data');
     }
@@ -150,7 +150,7 @@ window.alert('Form submitted successfully');
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
               />
-              {errors.comment && <div className={styles.errorMessage}>{errors.subject}</div>}
+              {errors.comment && <div className={styles.errorMessage}>{errors.comment}</div>}
             </div>
           <div className={styles.recaptchaContainer}>
             <GoogleReCaptcha
